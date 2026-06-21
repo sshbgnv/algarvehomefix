@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<title>Algarve Home Fix — AC Servicing, Repairs & Rental Preparation</title>
+<meta name="description" content="AC servicing, repair and installation, terrace shading, window tinting, home repairs and rental property preparation across Algarve — Vilamoura, Quarteira, Faro, Albufeira. Free quotes, fair prices.">
+<link rel="canonical" href="https://www.algarvehomefix.com">
+<meta property="og:title" content="Algarve Home Fix — AC Servicing, Repairs & Rental Preparation">
+<meta property="og:description" content="AC servicing, repair and installation, terrace shading, window tinting, home repairs and rental property preparation across Algarve.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.algarvehomefix.com">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ocean:   #2A7F9E;
+  --ocean-d: #0D2B3E;
+  --ocean-l: #4FA8C5;
+  --sand:    #D4A574;
+  --sand-l:  #F0E6D6;
+  --light:   #FAFBFC;
+  --dark:    #0D1F2D;
+  --muted:   #6B8A9A;
+  --mist:    #EEF4F7;
+  --white:   #FFFFFF;
+}
+
+*, *::before, *::after { cursor: none; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--light);
+  font-family: 'Inter', sans-serif;
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+.serif { font-family: 'Playfair Display', serif; }
+
+/* CURSOR */
+.cursor {
+  position: fixed; width: 22px; height: 22px;
+  border: 2px solid var(--ocean); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width .2s, height .2s, background .2s;
+}
+.cursor::after {
+  content: ''; position: absolute;
+  width: 5px; height: 5px; background: var(--ocean);
+  border-radius: 50%; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cursor.hover { width: 36px; height: 36px; background: rgba(42,127,158,0.12); }
+
+/* GLASS */
+.glass      { background: rgba(255,255,255,0.72); backdrop-filter: blur(20px); border: 1px solid rgba(42,127,158,0.14); }
+.glass-strong { background: rgba(255,255,255,0.85); backdrop-filter: blur(28px); border: 1px solid rgba(42,127,158,0.16); }
+
+/* GRADIENT */
+.gradient-text {
+  background: linear-gradient(135deg, var(--ocean-d), var(--ocean));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* BUTTONS */
+.btn { transition: all 0.28s cubic-bezier(0.34,1.56,0.64,1); }
+.btn:hover { transform: translateY(-3px); }
+.btn:active { transform: scale(0.97); }
+.glow-ocean { box-shadow: 0 6px 24px rgba(42,127,158,0.3); }
+.glow-ocean:hover { box-shadow: 0 12px 40px rgba(42,127,158,0.4); }
+.glow-wa { box-shadow: 0 6px 24px rgba(37,211,102,0.32); }
+.glow-wa:hover { box-shadow: 0 12px 40px rgba(37,211,102,0.45); }
+
+/* PAGES */
+.page { display: none; opacity: 0; }
+.page.active { display: block; animation: fadeIn 0.45s forwards; }
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* NAV */
+.nav-link {
+  position: relative; color: var(--muted); font-weight: 500;
+  font-size: 14px; transition: color 0.25s;
+}
+.nav-link::after {
+  content: ''; position: absolute; bottom: -5px; left: 0;
+  width: 0; height: 2px; background: var(--ocean); transition: width 0.25s;
+}
+.nav-link:hover::after { width: 100%; }
+.nav-link:hover { color: var(--ocean-d); }
+
+/* HERO */
+.hero-bg {
+  background: linear-gradient(155deg, var(--ocean-d) 0%, #0f3a52 45%, #1a3028 100%);
+}
+.hero-glow {
+  position: absolute; top: -120px; right: -80px;
+  width: 650px; height: 650px;
+  background: radial-gradient(circle, rgba(42,127,158,0.22) 0%, transparent 62%);
+  pointer-events: none;
+}
+.hero-glow-2 {
+  position: absolute; bottom: -100px; left: -80px;
+  width: 450px; height: 450px;
+  background: radial-gradient(circle, rgba(212,165,116,0.10) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* TRUST BAR */
+.trust-bar {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+}
+.trust-item {
+  padding: 22px 16px; text-align: center;
+  border-right: 1px solid rgba(42,127,158,0.12);
+  font-size: 13px; font-weight: 600; color: var(--dark);
+  line-height: 1.4;
+}
+.trust-item:last-child { border-right: none; }
+
+/* CATEGORY CARDS */
+.cat-card {
+  border-radius: 20px; overflow: hidden;
+  transition: transform .28s, box-shadow .28s; cursor: pointer;
+}
+.cat-card:hover { transform: translateY(-5px); box-shadow: 0 18px 48px rgba(13,43,62,0.12); }
+
+.cat-dark {
+  background: linear-gradient(145deg, var(--ocean-d) 0%, #0f3a52 100%);
+  border: 1px solid rgba(42,127,158,0.2);
+}
+
+/* Pills */
+.pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12px; font-weight: 500; margin: 3px;
+  padding: 5px 12px; border-radius: 100px;
+}
+.pill-light {
+  border: 1px solid rgba(42,127,158,0.28); color: rgba(255,255,255,0.7);
+}
+.pill-light:hover { background: rgba(42,127,158,0.2); color: white; }
+.pill-dark {
+  border: 1px solid rgba(42,127,158,0.18); color: var(--muted);
+  background: rgba(42,127,158,0.04);
+}
+
+/* FLOATING WA */
+.wa-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 200;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: #25D366;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+  transition: transform .25s, box-shadow .25s;
+  text-decoration: none;
+}
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,0.55); }
+.wa-float svg { width: 30px; height: 30px; fill: white; }
+
+/* GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 220px 220px 220px 220px 220px;
+  gap: 12px;
+}
+.g-item {
+  border-radius: 16px; overflow: hidden;
+  background: var(--mist); position: relative; cursor: pointer;
+}
+.g-item:first-child { grid-column: span 2; }
+.g-item:nth-child(4) { grid-column: span 2; }
+.g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.g-item:hover img { transform: scale(1.05); }
+.g-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+  color: var(--muted); font-size: 11px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+.g-label {
+  position: absolute; bottom: 10px; left: 10px;
+  background: rgba(13,31,45,0.68); backdrop-filter: blur(8px);
+  color: white; font-size: 11px; font-weight: 600;
+  padding: 4px 12px; border-radius: 100px;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 500;
+  background: rgba(0,0,0,0.88); backdrop-filter: blur(8px);
+  align-items: center; justify-content: center;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 12px; }
+.lightbox-close {
+  position: absolute; top: 20px; right: 24px;
+  color: white; font-size: 32px; cursor: pointer; z-index: 510;
+}
+
+/* CTA STRIP */
+.cta-strip {
+  background: linear-gradient(135deg, var(--ocean-d) 0%, #0f3a52 100%);
+  border-radius: 24px; padding: 52px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 32px; flex-wrap: wrap;
+}
+
+/* CONTACT */
+.contact-row { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+.contact-icon {
+  width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+  background: rgba(42,127,158,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: var(--ocean);
+}
+
+/* PRICING */
+.price-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 13px 0; border-bottom: 1px solid rgba(42,127,158,0.1);
+}
+.price-row:last-child { border-bottom: none; }
+
+/* SERVICE DETAIL */
+.detail-hero {
+  background: linear-gradient(155deg, var(--ocean-d) 0%, #0f3a52 100%);
+}
+.detail-nav {
+  background: rgba(255,255,255,0.88); backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(42,127,158,0.14);
+}
+
+/* CHECK LIST */
+.check-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--dark);
+  padding: 12px 16px; background: white; border-radius: 12px;
+  border: 1px solid rgba(42,127,158,0.12);
+}
+
+@media (max-width: 768px) {
+  .trust-bar { grid-template-columns: 1fr 1fr; }
+  .trust-item { border-right: none; border-bottom: 1px solid rgba(42,127,158,0.12); }
+  .trust-item:last-child { border-bottom: none; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .g-item:first-child, .g-item:nth-child(4) { grid-column: span 2; height: 200px; }
+  .cta-strip { text-align: center; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/351913981175" target="_blank" class="wa-float" title="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">✕</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- ═══════════════════ HOME ═══════════════════ -->
+<div id="home" class="page active">
+
+<!-- NAV -->
+<nav class="glass-strong fixed top-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <div onclick="showPage('home')" style="cursor:pointer; display:flex; align-items:center; gap:10px;">
+      <div style="width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg,var(--ocean),var(--sand)); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+      </div>
+      <div>
+        <div style="color:var(--ocean-d); font-weight:800; font-size:16px; letter-spacing:-0.5px; font-family:'Playfair Display',serif; line-height:1;">AlgarveHomeFix</div>
+        <div style="color:var(--ocean); font-size:8px; font-weight:700; letter-spacing:2px;">HOME COMFORT · ALGARVE</div>
+      </div>
+    </div>
+    <div class="hidden md:flex gap-8">
+      <a onclick="showPage('home')" class="nav-link">Home</a>
+      <a onclick="scrollToSection('services')" class="nav-link">Services</a>
+      <a onclick="scrollToSection('gallery-section')" class="nav-link">Gallery</a>
+      <a onclick="scrollToSection('pricing')" class="nav-link">Prices</a>
+      <a onclick="scrollToSection('contact')" class="nav-link">Contact</a>
+    </div>
+    <a href="https://wa.me/351913981175" target="_blank"
+       class="btn glow-wa px-5 py-2.5 rounded-lg font-semibold text-sm text-white flex items-center gap-2"
+       style="background:#25D366;">
+      <i class="ti ti-brand-whatsapp"></i> WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-bg flex items-center relative overflow-hidden pt-20 pb-16 md:pb-24" style="min-height: 100vh;">
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="max-w-7xl mx-auto px-6 py-12 md:py-24 w-full grid md:grid-cols-2 gap-16 items-center relative z-10">
+    <div>
+      <div class="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full text-sm"
+           style="background:rgba(42,127,158,0.15); border:1px solid rgba(42,127,158,0.3); color:rgba(255,255,255,0.7); font-weight:500;">
+        Trusted by homeowners across Algarve since 2023
+      </div>
+
+      <h1 class="serif font-bold text-white mb-6" style="font-size: clamp(38px,5.5vw,64px); line-height:1.12; letter-spacing:-1px;">
+        Your property.<br>
+        <span style="color:var(--ocean-l);">Protected,</span> comfortable<br>
+        and ready.
+      </h1>
+
+      <p class="mb-10 leading-relaxed" style="color:rgba(255,255,255,0.58); font-size:17px; font-weight:300; max-width:500px;">
+        AC servicing &amp; installation, home repairs, terrace shading and rental preparation — all across Algarve.
+      </p>
+
+      <div class="flex gap-4 flex-wrap mb-14">
+        <a href="https://wa.me/351913981175" target="_blank"
+           class="btn glow-wa px-8 py-3.5 rounded-xl font-semibold text-white flex items-center gap-2"
+           style="background:#25D366; font-size:15px;">
+          <i class="ti ti-brand-whatsapp"></i> Get Free Quote
+        </a>
+        <button onclick="scrollToSection('services')"
+                class="btn px-8 py-3.5 rounded-xl font-semibold flex items-center gap-2"
+                style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.82); font-size:15px;">
+          Our Services <i class="ti ti-arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="flex gap-10">
+        <div>
+          <div class="serif font-bold" style="font-size:32px; color:var(--ocean-l);">500+</div>
+          <div style="font-size:11px; color:rgba(255,255,255,0.4); letter-spacing:0.5px; margin-top:4px;">Jobs done</div>
+        </div>
+        <div style="width:1px; background:rgba(255,255,255,0.1);"></div>
+        <div>
+          <div class="serif font-bold" style="font-size:32px; color:var(--ocean-l);">24h</div>
+          <div style="font-size:11px; color:rgba(255,255,255,0.4); letter-spacing:0.5px; margin-top:4px;">Response</div>
+        </div>
+        <div style="width:1px; background:rgba(255,255,255,0.1);"></div>
+        <div>
+          <div class="serif font-bold" style="font-size:32px; color:var(--ocean-l);">5★</div>
+          <div style="font-size:11px; color:rgba(255,255,255,0.4); letter-spacing:0.5px; margin-top:4px;">Rating</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero photo: modern villa, Algarve -->
+    <div class="rounded-2xl overflow-hidden" style="height:420px; border:1px solid rgba(42,127,158,0.2);">
+      <img src="images/hero-villa.jpg" alt="Modern minimalist villa in Algarve, exterior with large windows and shaded terrace" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="max-w-7xl mx-auto px-6 -mt-6 md:-mt-8 relative z-20 mb-20">
+  <div class="glass-strong rounded-2xl trust-bar">
+    <div class="trust-item">Free On-Site Quote</div>
+    <div class="trust-item">Response within 24h</div>
+    <div class="trust-item">Fully Insured</div>
+    <div class="trust-item">English &amp; Russian</div>
+    <div class="trust-item">Algarve-Based Team</div>
+  </div>
+</div>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services" class="max-w-7xl mx-auto px-6 py-16">
+  <div class="mb-14">
+    <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:12px;">What We Do</div>
+    <h2 class="serif font-bold mb-4" style="font-size:clamp(34px,4.5vw,52px); color:var(--dark); line-height:1.12;">Every comfort.<br>One team.</h2>
+  </div>
+
+  <div class="flex flex-col gap-6">
+
+    <!-- CAT 1: AC & COOLING -->
+    <div class="cat-card cat-dark" onclick="showPage('cat-heat')" style="overflow:hidden;">
+      <div class="flex flex-col-reverse md:flex-row md:items-stretch">
+        <div style="flex:1; padding:32px 36px;" class="md:p-10">
+          <div style="color:var(--ocean-l); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;">01 · Priority Service</div>
+          <h3 class="serif font-bold text-white mb-3" style="font-size:clamp(26px,3.5vw,38px);">AC & Climate Control</h3>
+          <p style="color:rgba(255,255,255,0.52); line-height:1.78; font-size:15px; max-width:480px; margin-bottom:18px;">
+            Your AC unit needs attention before summer hits. We service, repair, regas and install air conditioning across Vilamoura, Quarteira, Faro and the wider Algarve — keeping your home cool when it matters most.
+          </p>
+          <div class="flex flex-wrap mb-6">
+            <span class="pill pill-light">Servicing &amp; Cleaning</span>
+            <span class="pill pill-light">Regas &amp; Diagnostics</span>
+            <span class="pill pill-light">Repair</span>
+            <span class="pill pill-light">Supply &amp; Install</span>
+            <span class="pill pill-light">Terrace Shading</span>
+            <span class="pill pill-light">Window Tinting</span>
+            <span class="pill pill-light">Mosquito Screens</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span style="color:rgba(255,255,255,0.3); font-size:13px; white-space:nowrap;">View services</span>
+            <div class="btn flex items-center justify-center w-11 h-11 rounded-full"
+                 style="background:rgba(42,127,158,0.2); border:1px solid rgba(42,127,158,0.4); color:var(--ocean-l); font-size:20px;">→</div>
+          </div>
+        </div>
+        <div style="flex:0 0 42%; min-height:220px; position:relative;" class="md:min-h-[260px]">
+          <img src="images/ac-install.jpg" alt="Daikin outdoor AC unit installed on modern villa exterior wall, Algarve" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;">
+        </div>
+      </div>
+    </div>
+    <!-- CAT 2 & 3 -->
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <div class="cat-card glass-strong" onclick="showPage('cat-home')" style="overflow:hidden; padding:0;">
+        <div style="width:100%; height:180px;">
+          <img src="images/furniture-assembly.jpg" alt="Furniture assembly in progress, modern Algarve apartment with olive tree view" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div style="padding:32px;">
+          <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;">02 · Home &amp; Furniture</div>
+          <h3 class="serif font-bold mb-3" style="font-size:clamp(22px,3vw,30px); color:var(--dark);">Repairs &amp; Assembly</h3>
+          <p style="color:var(--muted); line-height:1.78; font-size:14px; margin-bottom:18px;">
+            Something's broken. A shelf needs putting up. The walls need a fresh coat. We handle the jobs that pile up — quickly, cleanly, without drama.
+          </p>
+          <div class="flex flex-wrap mb-6">
+            <span class="pill pill-dark">Small Repairs</span>
+            <span class="pill pill-dark">Furniture Assembly</span>
+            <span class="pill pill-dark">Painting</span>
+          </div>
+          <div class="flex justify-end">
+            <div class="btn flex items-center justify-center w-10 h-10 rounded-full"
+                 style="background:rgba(42,127,158,0.08); border:1px solid rgba(42,127,158,0.2); color:var(--ocean); font-size:18px;">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-card glass-strong" onclick="showPage('cat-rental')" style="overflow:hidden; padding:0;">
+        <div style="width:100%; height:180px; position:relative;">
+          <img src="images/rental-interior.jpg" alt="Bright modern living room interior with sea view terrace, rental property ready for guests in Algarve" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div style="padding:32px;">
+          <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;">03 · Rental Ready</div>
+          <h3 class="serif font-bold mb-3" style="font-size:clamp(22px,3vw,30px); color:var(--dark);">Property Preparation</h3>
+          <p style="color:var(--muted); line-height:1.78; font-size:14px; margin-bottom:18px;">
+            Your guests arrive in 3 days. Is everything actually working? We inspect, fix and prepare rental properties for the season — so you get 5-star reviews, not complaints.
+          </p>
+          <div class="flex flex-wrap mb-6">
+            <span class="pill pill-dark">Pre-Checkin Inspection</span>
+            <span class="pill pill-dark">Fix Before Renting</span>
+            <span class="pill pill-dark">Season Prep</span>
+          </div>
+          <div class="flex justify-end">
+            <div class="btn flex items-center justify-center w-10 h-10 rounded-full"
+                 style="background:rgba(42,127,158,0.08); border:1px solid rgba(42,127,158,0.2); color:var(--ocean); font-size:18px;">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<div class="max-w-7xl mx-auto px-6 mb-20">
+  <div class="cta-strip">
+    <div>
+      <div style="color:rgba(255,255,255,0.45); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">Free consultation</div>
+      <h3 class="serif font-bold text-white" style="font-size:28px; margin-bottom:8px;">Not sure what you need?</h3>
+      <p style="color:rgba(255,255,255,0.48); font-size:14px;">Send us a message — we'll visit, assess and give you a quote. No commitment.</p>
+    </div>
+    <div class="flex gap-4 flex-wrap">
+      <a href="https://wa.me/351913981175" target="_blank"
+         class="btn glow-wa px-7 py-3.5 rounded-xl font-semibold text-white flex items-center gap-2"
+         style="background:#25D366; font-size:14px;">
+        <i class="ti ti-brand-whatsapp"></i> WhatsApp Us
+      </a>
+      <a href="mailto:Algarvehomefix@gmail.com"
+         class="btn px-7 py-3.5 rounded-xl font-semibold flex items-center gap-2"
+         style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.8); font-size:14px;">
+        <i class="ti ti-mail"></i> Email Us
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ GALLERY ═══ -->
+<section id="gallery-section" class="max-w-7xl mx-auto px-6 py-16">
+  <div class="flex flex-wrap justify-between items-end mb-10 gap-6">
+    <div>
+      <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:12px;">Our Work</div>
+      <h2 class="serif font-bold" style="font-size:clamp(30px,4vw,46px); color:var(--dark); line-height:1.15;">Real jobs.<br>Real results.</h2>
+    </div>
+    <div class="flex gap-2 flex-wrap" id="gallery-filters">
+      <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium" data-filter="all"
+              style="background:var(--dark); color:white; border:1px solid var(--dark);">All</button>
+      <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium" data-filter="ac"
+              style="background:transparent; color:var(--muted); border:1px solid rgba(42,127,158,0.2);">AC &amp; Cooling</button>
+      <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium" data-filter="shade"
+              style="background:transparent; color:var(--muted); border:1px solid rgba(42,127,158,0.2);">Shading</button>
+      <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium" data-filter="repair"
+              style="background:transparent; color:var(--muted); border:1px solid rgba(42,127,158,0.2);">Repairs</button>
+      <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium" data-filter="rental"
+              style="background:transparent; color:var(--muted); border:1px solid rgba(42,127,158,0.2);">Rental Prep</button>
+    </div>
+  </div>
+
+  <div class="gallery-grid" id="gallery-grid">
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img src="images/real-pergola-sky-view.jpg" alt="View looking up at woven fabric pergola shade canopy against blue sky, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Pergola Shading · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img src="images/ac-supply-main.jpg" alt="Daikin outdoor AC units installed on villa exterior wall, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">AC Installation · Vilamoura</div>
+    </div>
+    <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
+      <img src="images/real-wardrobe-storage-1.jpg" alt="Organised storage wardrobe with safe and household items, Algarve home" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Storage Organisation · Faro</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img src="images/real-mosquito-screen-closeup.jpg" alt="Mosquito screen frame close-up, installed on sliding window, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Mosquito Screens · Quarteira</div>
+    </div>
+    <div class="g-item" data-cat="rental" onclick="openLightbox(this)">
+      <img src="images/rental-season-terrace.jpg" alt="Villa terrace prepared for guests with sun lounger and ocean view, Algarve rental" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Rental Prep · Vale do Lobo</div>
+    </div>
+    <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
+      <img src="images/pexels-drill-hinge-repair.jpg" alt="Close-up of hinge repair with power drill on wooden furniture, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Furniture Repair · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img src="images/pexels-ac-remote-hand.jpg" alt="Hand holding AC remote control, adjusting temperature in modern home" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">AC Comfort · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img src="images/shading-pergola-detail.jpg" alt="Close-up of wooden pergola lattice with woven shade panels, sunset light" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Pergola Detail · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img src="images/shading-install-process.jpg" alt="Fabric shade canopy being installed on wooden pergola frame" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Shade Installation · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img src="images/shade-patio-wicker.jpg" alt="Covered patio with wicker furniture under wooden pergola roof, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Covered Patio · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img src="images/shade-lounge-mesh.jpg" alt="Outdoor lounge area shaded by woven mesh pergola roof, Algarve villa" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Shaded Lounge · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img src="images/tinting-installed.jpg" alt="Tinted windows in Algarve home with ocean view, solar control film reducing glare" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Window Tinting · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img src="images/tinting-before-after.jpg" alt="Before and after comparison of window solar film tinting, garden view reduced glare" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Tinting Before/After · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img src="images/tint-corridor-columns.jpg" alt="Glass corridor with tinted windows and white columns, sunlit interior" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Tinted Corridor · Algarve</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section id="pricing" class="max-w-7xl mx-auto px-6 py-16">
+  <div class="mb-12">
+    <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:12px;">Transparent Pricing</div>
+    <h2 class="serif font-bold mb-4" style="font-size:clamp(30px,4vw,46px); color:var(--dark);">No surprises. Ever.</h2>
+    <p style="color:var(--muted); max-width:480px; line-height:1.7; font-size:15px;">Free quote before every job. You know exactly what you're paying.</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6">
+
+    <!-- General rate -->
+    <div class="glass-strong rounded-2xl p-8">
+      <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:20px;">General Rate</div>
+      <div class="flex items-baseline gap-2 mb-2">
+        <span class="serif font-bold gradient-text" style="font-size:62px; line-height:1;">€60</span>
+        <span style="color:var(--muted); font-size:18px;">/hr</span>
+      </div>
+      <p style="color:var(--muted); font-size:13px; margin-bottom:24px;">Repairs, assembly, painting, inspection</p>
+      <div style="border-top:1px solid rgba(42,127,158,0.12); padding-top:20px;">
+        <div class="price-row"><span style="font-size:13px;">Minimum billing</span><span style="font-size:13px; color:var(--muted);">30 min</span></div>
+        <div class="price-row"><span style="font-size:13px;">Then per</span><span style="font-size:13px; color:var(--muted);">30 min intervals</span></div>
+        <div class="price-row"><span style="font-size:13px;">On-site quote</span><span style="font-size:13px; color:#25D366; font-weight:600;">Free</span></div>
+        <div class="price-row"><span style="font-size:13px;">Invoice</span><span style="font-size:13px; color:var(--muted);">After each job</span></div>
+      </div>
+    </div>
+
+    <!-- AC pricing -->
+    <div class="rounded-2xl p-8" style="background:linear-gradient(145deg,var(--ocean-d),#0f3a52); border:1px solid rgba(42,127,158,0.25);">
+      <div style="color:var(--ocean-l); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:20px;">AC Services</div>
+      <div class="flex items-baseline gap-2 mb-2">
+        <span class="serif font-bold text-white" style="font-size:38px; line-height:1;">from €90</span>
+      </div>
+      <p style="color:rgba(255,255,255,0.38); font-size:13px; margin-bottom:24px;">Service &amp; repair · installation quoted separately</p>
+      <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:20px; display:flex; flex-direction:column; gap:0;">
+        <div class="price-row" style="border-color:rgba(255,255,255,0.07);">
+          <span style="font-size:13px; color:rgba(255,255,255,0.72);">Annual service / clean</span>
+          <span style="font-size:13px; color:var(--ocean-l); font-weight:600;">€90–140</span>
+        </div>
+        <div class="price-row" style="border-color:rgba(255,255,255,0.07);">
+          <span style="font-size:13px; color:rgba(255,255,255,0.72);">Regas (refrigerant)</span>
+          <span style="font-size:13px; color:var(--ocean-l); font-weight:600;">from €120</span>
+        </div>
+        <div class="price-row" style="border-color:rgba(255,255,255,0.07);">
+          <span style="font-size:13px; color:rgba(255,255,255,0.72);">Install 9–12k BTU</span>
+          <span style="font-size:13px; color:var(--ocean-l); font-weight:600;">€180–250</span>
+        </div>
+        <div class="price-row" style="border-color:rgba(255,255,255,0.07);">
+          <span style="font-size:13px; color:rgba(255,255,255,0.72);">Install 18k BTU</span>
+          <span style="font-size:13px; color:var(--ocean-l); font-weight:600;">€250–350</span>
+        </div>
+        <div class="price-row" style="border-color:rgba(255,255,255,0.07);">
+          <span style="font-size:13px; color:rgba(255,255,255,0.72);">Multi-split 2–3 units</span>
+          <span style="font-size:13px; color:var(--ocean-l); font-weight:600;">€400–600</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Free quote card -->
+    <div class="glass-strong rounded-2xl p-8 flex flex-col justify-between" style="border:1.5px solid rgba(37,211,102,0.22);">
+      <div>
+        <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:20px;">Free Quote</div>
+        <h4 class="serif font-bold mb-4" style="font-size:22px; color:var(--dark);">Not sure of the cost?</h4>
+        <p style="color:var(--muted); font-size:14px; line-height:1.75; margin-bottom:24px;">Send a photo and description — we'll estimate within a few hours. No commitment needed.</p>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:28px;">
+          <div class="check-item"><i class="ti ti-check" style="color:#25D366;"></i> No call required</div>
+          <div class="check-item"><i class="ti ti-check" style="color:#25D366;"></i> Reply same day</div>
+          <div class="check-item"><i class="ti ti-check" style="color:#25D366;"></i> Free site visit if needed</div>
+        </div>
+      </div>
+      <a href="https://wa.me/351913981175" target="_blank"
+         class="btn glow-wa w-full py-3.5 rounded-xl font-semibold text-white text-center flex items-center justify-center gap-2"
+         style="background:#25D366; font-size:15px;">
+        <i class="ti ti-brand-whatsapp"></i> Get a Quote
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ REVIEWS ═══ -->
+<section class="max-w-7xl mx-auto px-6 py-16">
+  <div class="mb-12">
+    <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:12px;">Client Reviews</div>
+    <h2 class="serif font-bold" style="font-size:clamp(30px,4vw,46px); color:var(--dark);">What our clients say</h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="glass-strong p-8 rounded-2xl">
+      <div style="color:#F59E0B; font-size:13px; letter-spacing:2px; margin-bottom:14px;">★★★★★</div>
+      <p style="color:var(--dark); line-height:1.78; font-size:14px; margin-bottom:24px; font-style:italic;">"Ordered a pergola installation. Everything done at the highest level — our terrace now looks like a magazine cover. Quick, clean, professional."</p>
+      <div style="display:flex; align-items:center; gap:12px; padding-top:20px; border-top:1px solid rgba(42,127,158,0.12);">
+        <div style="width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--ocean-d),var(--ocean)); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:white;">EM</div>
+        <div><div style="font-weight:600; font-size:13px; color:var(--dark);">Elena Maurel</div><div style="font-size:11px; color:var(--muted);">Vilamoura</div></div>
+      </div>
+    </div>
+    <div class="glass-strong p-8 rounded-2xl">
+      <div style="color:#F59E0B; font-size:13px; letter-spacing:2px; margin-bottom:14px;">★★★★★</div>
+      <p style="color:var(--dark); line-height:1.78; font-size:14px; margin-bottom:24px; font-style:italic;">"Fixed everything before our guests arrived — AC service, a leaky tap, curtain rails. Professional and reliable. Will use every season."</p>
+      <div style="display:flex; align-items:center; gap:12px; padding-top:20px; border-top:1px solid rgba(42,127,158,0.12);">
+        <div style="width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--ocean-d),var(--ocean)); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:white;">JH</div>
+        <div><div style="font-weight:600; font-size:13px; color:var(--dark);">James Hev</div><div style="font-size:11px; color:var(--muted);">Quarteira</div></div>
+      </div>
+    </div>
+    <div class="glass-strong p-8 rounded-2xl">
+      <div style="color:#F59E0B; font-size:13px; letter-spacing:2px; margin-bottom:14px;">★★★★★</div>
+      <p style="color:var(--dark); line-height:1.78; font-size:14px; margin-bottom:24px; font-style:italic;">"They serviced the AC, installed solar film on the windows — the difference is remarkable. Fair price, tidy work. Highly recommended."</p>
+      <div style="display:flex; align-items:center; gap:12px; padding-top:20px; border-top:1px solid rgba(42,127,158,0.12);">
+        <div style="width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--ocean-d),var(--ocean)); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:white;">SR</div>
+        <div><div style="font-weight:600; font-size:13px; color:var(--dark);">Sophie R.</div><div style="font-size:11px; color:var(--muted);">Almancil</div></div>
+      </div>
+    </div>
+    <div class="glass-strong p-8 rounded-2xl">
+      <div style="color:#F59E0B; font-size:13px; letter-spacing:2px; margin-bottom:14px;">★★★★★</div>
+      <p style="color:var(--dark); line-height:1.78; font-size:14px; margin-bottom:24px; font-style:italic;">"Every local handyman I called had a 1–2 week waiting list. Algarve Home Fix came the next day and the job was done properly the first time."</p>
+      <div style="display:flex; align-items:center; gap:12px; padding-top:20px; border-top:1px solid rgba(42,127,158,0.12);">
+        <div style="width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--ocean-d),var(--ocean)); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:white;">MK</div>
+        <div><div style="font-weight:600; font-size:13px; color:var(--dark);">Markus K.</div><div style="font-size:11px; color:var(--muted);">Faro</div></div>
+      </div>
+    </div>
+    <div class="glass-strong p-8 rounded-2xl">
+      <div style="color:#F59E0B; font-size:13px; letter-spacing:2px; margin-bottom:14px;">★★★★★</div>
+      <p style="color:var(--dark); line-height:1.78; font-size:14px; margin-bottom:24px; font-style:italic;">"Assembled an entire bedroom set from IKEA and fixed a wobbly wardrobe door while they were at it. Careful, fast, and left zero mess behind."</p>
+      <div style="display:flex; align-items:center; gap:12px; padding-top:20px; border-top:1px solid rgba(42,127,158,0.12);">
+        <div style="width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--ocean-d),var(--ocean)); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:white;">AT</div>
+        <div><div style="font-weight:600; font-size:13px; color:var(--dark);">Anna T.</div><div style="font-size:11px; color:var(--muted);">Loulé</div></div>
+      </div>
+    </div>
+    <div class="glass-strong p-8 rounded-2xl">
+      <div style="color:#F59E0B; font-size:13px; letter-spacing:2px; margin-bottom:14px;">★★★★★</div>
+      <p style="color:var(--dark); line-height:1.78; font-size:14px; margin-bottom:24px; font-style:italic;">"We run three rental properties and they inspect each one before every guest. Caught a leak we didn't know about before it became a real problem."</p>
+      <div style="display:flex; align-items:center; gap:12px; padding-top:20px; border-top:1px solid rgba(42,127,158,0.12);">
+        <div style="width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--ocean-d),var(--ocean)); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:white;">RP</div>
+        <div><div style="font-weight:600; font-size:13px; color:var(--dark);">Ricardo P.</div><div style="font-size:11px; color:var(--muted);">Vale do Lobo</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="max-w-7xl mx-auto px-6 py-16">
+  <div class="mb-12">
+    <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:12px;">Get In Touch</div>
+    <h2 class="serif font-bold" style="font-size:clamp(30px,4vw,46px); color:var(--dark);">Let's talk about<br>your property</h2>
+  </div>
+  <div class="grid md:grid-cols-2 gap-12">
+    <div>
+      <div class="contact-row">
+        <div class="contact-icon"><i class="ti ti-brand-whatsapp"></i></div>
+        <div>
+          <div style="font-size:11px; font-weight:600; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-bottom:5px;">WhatsApp — fastest way</div>
+          <a href="https://wa.me/351913981175" target="_blank" style="font-size:19px; font-weight:700; color:var(--dark); text-decoration:none;">+351 913 981 175</a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon"><i class="ti ti-mail"></i></div>
+        <div>
+          <div style="font-size:11px; font-weight:600; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-bottom:5px;">Email</div>
+          <a href="mailto:Algarvehomefix@gmail.com" style="font-size:16px; font-weight:600; color:var(--dark); text-decoration:none;">Algarvehomefix@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon"><i class="ti ti-map-pin"></i></div>
+        <div>
+          <div style="font-size:11px; font-weight:600; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-bottom:5px;">Location</div>
+          <p style="font-size:15px; color:var(--dark); line-height:1.6;">Based in Quarteira<br>Algarve, Portugal</p>
+        </div>
+      </div>
+      <div style="margin-top:8px; padding:18px 20px; background:rgba(42,127,158,0.06); border-radius:14px; border:1px solid rgba(42,127,158,0.14); margin-bottom:20px;">
+        <div style="font-size:11px; font-weight:700; color:var(--ocean); letter-spacing:1px; text-transform:uppercase; margin-bottom:8px;">Coverage</div>
+        <p style="font-size:14px; color:var(--muted); line-height:1.7;">From Sagres to Olhão — and inland across Central Algarve</p>
+      </div>
+      <div style="border-radius:16px; overflow:hidden; border:1px solid rgba(42,127,158,0.18); height:240px;">
+        <iframe
+          src="https://www.google.com/maps?q=Quarteira,Portugal&z=12&output=embed"
+          width="100%" height="100%" style="border:0; display:block;"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Algarve Home Fix service area — Quarteira, Algarve">
+        </iframe>
+      </div>
+    </div>
+    <div class="glass-strong rounded-2xl p-10 flex flex-col justify-center gap-6">
+      <div>
+        <h3 class="serif font-bold mb-2" style="font-size:24px; color:var(--dark);">Ready to get started?</h3>
+        <p style="color:var(--muted); font-size:14px; line-height:1.75;">The fastest way is WhatsApp — send us a photo and a few words about what you need. We respond the same day.</p>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="https://wa.me/351913981175" target="_blank"
+           class="btn glow-wa py-4 rounded-xl font-semibold text-white text-center flex items-center justify-center gap-2"
+           style="background:#25D366; font-size:16px;">
+          <i class="ti ti-brand-whatsapp text-xl"></i> Message on WhatsApp
+        </a>
+        <a href="mailto:Algarvehomefix@gmail.com"
+           class="btn py-4 rounded-xl font-semibold text-center flex items-center justify-center gap-2"
+           style="background:rgba(42,127,158,0.06); border:1px solid rgba(42,127,158,0.18); color:var(--ocean-d); font-size:15px;">
+          <i class="ti ti-mail"></i> Send an Email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top:1px solid rgba(42,127,158,0.12); background:rgba(255,255,255,0.5); padding:32px 24px; margin-top:40px;">
+  <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
+    <div>
+      <div style="font-family:'Playfair Display',serif; font-weight:700; font-size:16px; color:var(--ocean-d);">AlgarveHomeFix</div>
+      <div style="font-size:12px; color:var(--muted); margin-top:4px;">From Sagres to Olhão · Home comfort since 2023</div>
+    </div>
+    <p style="color:var(--muted); font-size:12px;">© 2026 Algarve Home Fix</p>
+    <div style="display:flex; gap:20px;">
+      <a href="https://wa.me/351913981175" target="_blank" style="color:var(--muted); font-size:13px; text-decoration:none;">WhatsApp</a>
+      <a href="mailto:Algarvehomefix@gmail.com" style="color:var(--muted); font-size:13px; text-decoration:none;">Email</a>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /home -->
+
+<!-- ═══════════════════ CAT: HEAT ═══════════════════ -->
+<div id="cat-heat" class="page">
+<nav class="detail-nav fixed top-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <button onclick="showPage('home')" class="flex items-center gap-2 font-semibold" style="color:var(--ocean);">
+      <i class="ti ti-arrow-left"></i> Back
+    </button>
+    <a href="https://wa.me/351913981175" target="_blank" class="btn glow-wa px-5 py-2.5 rounded-lg font-semibold text-sm text-white flex items-center gap-2" style="background:#25D366;">
+      <i class="ti ti-brand-whatsapp"></i> WhatsApp
+    </a>
+  </div>
+</nav>
+<section class="detail-hero flex items-end pt-32 pb-14 px-6" style="min-height:280px; position:relative; overflow:hidden;">
+  <div style="position:absolute;top:-100px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(42,127,158,0.2) 0%,transparent 60%);pointer-events:none;"></div>
+  <div class="max-w-4xl mx-auto w-full relative z-10">
+    <div style="color:var(--ocean-l); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">01 · Priority Service</div>
+    <h1 class="serif font-bold text-white mb-4" style="font-size:clamp(32px,5vw,52px);">AC &amp; Climate Control in Algarve</h1>
+    <p style="color:rgba(255,255,255,0.52); font-size:16px; max-width:560px; line-height:1.75;">AC servicing, repair, regas and installation, plus terrace shading and window tinting — everything that keeps your Algarve property cool, from a single apartment to a full villa.</p>
+  </div>
+</section>
+<div class="max-w-4xl mx-auto px-6 py-16">
+
+  <div class="mb-14">
+    <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">🔧 AC Servicing, Cleaning &amp; Regas</h2>
+    <div style="border-radius:16px; overflow:hidden; height:260px; margin-bottom:16px;">
+      <img src="images/ac-servicing-closeup.jpg" alt="Outdoor AC unit on sunny building wall, ready for servicing, Algarve" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:14px;">This is the most requested job, and the one that prevents the most trouble later. A unit that hasn't been serviced loses cooling power and uses more electricity. We clean the filters and coils, check the refrigerant level, inspect the electrics and confirm the system is running at full performance — ideally booked before the Algarve summer heat arrives.</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px;">
+      <div class="check-item"><i class="ti ti-check" style="color:var(--ocean);"></i> Filter &amp; coil cleaning</div>
+      <div class="check-item"><i class="ti ti-check" style="color:var(--ocean);"></i> Refrigerant check &amp; regas</div>
+      <div class="check-item"><i class="ti ti-check" style="color:var(--ocean);"></i> Electrical inspection</div>
+      <div class="check-item"><i class="ti ti-check" style="color:var(--ocean);"></i> Performance test</div>
+    </div>
+    <div style="background:rgba(42,127,158,0.06); border:1px solid rgba(42,127,158,0.14); border-radius:14px; padding:16px 20px; font-size:13px; color:var(--muted);">
+      Annual service <strong style="color:var(--dark);">€90–140 / unit</strong> · Regas from <strong style="color:var(--dark);">€120</strong>
+    </div>
+  </div>
+
+  <div class="mb-14">
+    <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">❄️ AC Supply &amp; Installation</h2>
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:14px;">Need a new air conditioning unit? We advise on the right system for your space, supply it and install it properly. We work with Daikin, Mitsubishi, Midea and Gree, covering everything from a single split unit to a multi-room villa setup across Vilamoura, Quarteira, Faro and the wider Algarve.</p>
+    <div style="border-radius:16px; overflow:hidden; height:280px; margin-bottom:16px;">
+      <img src="images/ac-supply-main.jpg" alt="Daikin outdoor AC units installed on modern villa exterior wall, Algarve" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px;">
+      <div style="border-radius:12px; overflow:hidden; height:160px;">
+        <img src="images/ac-supply-install-closeup.jpg" alt="Technician installing Daikin outdoor AC unit with drill, close-up" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div style="border-radius:12px; overflow:hidden; height:160px;">
+        <img src="images/ac-supply-indoor-unit.jpg" alt="Modern indoor AC unit mounted above window in bright living room, Algarve villa" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <div style="background:linear-gradient(145deg,var(--ocean-d),#0f3a52); border-radius:16px; padding:24px 28px; margin-bottom:16px;">
+      <div style="color:var(--ocean-l); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;">Installation — labour only</div>
+      <div style="display:flex; flex-direction:column; gap:0;">
+        <div class="price-row" style="border-color:rgba(255,255,255,0.07); padding:12px 0;">
+          <span style="font-size:13px; color:rgba(255,255,255,0.72);">9–12k BTU (1 room)</span><span style="font-size:13px; color:var(--ocean-l); font-weight:600;">€180–250</span>
+        </div>
+        <div class="price-row" style="border-color:rgba(255,255,255,0.07); padding:12px 0;">
+          <span style="font-size:13px; color:rgba(255,255,255,0.72);">18k BTU (large room)</span><span style="font-size:13px; color:var(--ocean-l); font-weight:600;">€250–350</span>
+        </div>
+        <div class="price-row" style="border-color:rgba(255,255,255,0.07); padding:12px 0;">
+          <span style="font-size:13px; color:rgba(255,255,255,0.72);">Multi-split 2–3 units</span><span style="font-size:13px; color:var(--ocean-l); font-weight:600;">€400–600</span>
+        </div>
+        <div style="padding:12px 0; display:flex; justify-content:space-between;">
+          <span style="font-size:13px; color:rgba(255,255,255,0.72);">Unit supply — from</span><span style="font-size:13px; color:var(--ocean-l); font-weight:600;">€350 (Midea/Gree) · €600+ (Daikin)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-14">
+    <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">🌿 Terrace Shading &amp; Pergolas</h2>
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:14px;">We design and build wooden pergolas and outdoor shade structures for terraces, gardens and rental properties across Algarve. Every project is custom — sized and styled to fit your outdoor space — using durable timber and weather-resistant fabric canopies that hold up through the full season.</p>
+    <div style="border-radius:16px; overflow:hidden; height:280px; margin-bottom:16px;">
+      <img src="images/shade-pergola-main-new.jpg" alt="Pergola with woven fabric shade canopy in warm sunlight, Algarve terrace" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px;">
+      <div style="border-radius:12px; overflow:hidden; height:160px;">
+        <img src="images/shade-architectural-detail.jpg" alt="Architectural detail of modern wooden pergola against clear blue sky" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div style="border-radius:12px; overflow:hidden; height:160px;">
+        <img src="images/shade-awning-balcony.jpg" alt="Retractable striped awning shading a balcony with plants, Algarve" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-2 mb-4">
+      <span class="pill pill-dark">Custom wooden pergolas</span>
+      <span class="pill pill-dark">Fabric shade canopies</span>
+      <span class="pill pill-dark">Outdoor dining &amp; lounge areas</span>
+      <span class="pill pill-dark">Retractable shade systems</span>
+    </div>
+    <div style="background:rgba(42,127,158,0.06); border:1px solid rgba(42,127,158,0.14); border-radius:14px; padding:16px 20px; font-size:13px; color:var(--muted);">
+      Fabric canopy systems from <strong style="color:var(--dark);">€60 per running metre</strong> (1.5m width), materials &amp; installation included. Wooden pergolas quoted after a free site visit.
+    </div>
+  </div>
+
+  <div class="mb-14">
+    <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">🪟 Window Tinting &amp; Solar Control Film</h2>
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:14px;">Solar control film cuts indoor heat and glare without blocking your view or requiring renovation work. It also protects furniture and flooring from UV damage and adds daytime privacy — installed in a few hours using durable, non-static adhesive film.</p>
+    <div style="border-radius:16px; overflow:hidden; height:260px; margin-bottom:16px;">
+      <img src="images/tint-villa-main-new.jpg" alt="Modern villa exterior with tinted windows, Algarve" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px;">
+      <div style="border-radius:12px; overflow:hidden; height:160px;">
+        <img src="images/tint-roofline-angle.jpg" alt="Architectural rooftop angle with reflective tinted glass windows" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div style="border-radius:12px; overflow:hidden; height:160px;">
+        <img src="images/tint-yellow-windows.jpg" alt="Twin windows with tinted glass panes on coloured facade" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <div style="margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:var(--ocean); letter-spacing:1px; text-transform:uppercase; margin-bottom:10px;">Film tones available</div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px;">
+        <div style="border-radius:12px; overflow:hidden; border:1px solid rgba(42,127,158,0.15);">
+          <img src="images/tinting-silver.jpg" alt="Silver solar control window film sample" style="width:100%; height:100px; object-fit:cover; display:block;">
+          <div style="text-align:center; font-size:12px; color:var(--muted); padding:6px 0; background:white;">Silver</div>
+        </div>
+        <div style="border-radius:12px; overflow:hidden; border:1px solid rgba(42,127,158,0.15);">
+          <img src="images/tinting-darksmoke.jpg" alt="Dark smoke solar control window film sample" style="width:100%; height:100px; object-fit:cover; display:block;">
+          <div style="text-align:center; font-size:12px; color:var(--muted); padding:6px 0; background:white;">Dark Smoke</div>
+        </div>
+        <div style="border-radius:12px; overflow:hidden; border:1px solid rgba(42,127,158,0.15);">
+          <img src="images/tinting-blue.jpg" alt="Blue solar control window film sample" style="width:100%; height:100px; object-fit:cover; display:block;">
+          <div style="text-align:center; font-size:12px; color:var(--muted); padding:6px 0; background:white;">Blue</div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-2 mb-4">
+      <span class="pill pill-dark">Heat reduction</span>
+      <span class="pill pill-dark">UV protection</span>
+      <span class="pill pill-dark">Glare control</span>
+      <span class="pill pill-dark">Privacy films</span>
+    </div>
+    <div style="background:rgba(42,127,158,0.06); border:1px solid rgba(42,127,158,0.14); border-radius:14px; padding:16px 20px; font-size:13px; color:var(--muted);">
+      Standard 1m × 2m window from <strong style="color:var(--dark);">€90</strong>, materials &amp; installation included. Custom sizes quoted on request.
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">🦟 Mosquito Screen Replacement</h2>
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:14px;">We measure, cut and fit mosquito screens for windows and doors on-site, often the same day. Durable mesh keeps insects out while maintaining airflow — ideal for ground-floor apartments and villas near water or greenery.</p>
+    <div style="border-radius:16px; overflow:hidden; height:260px; margin-bottom:16px;">
+      <img src="images/real-mosquito-screen-closeup.jpg" alt="Installed white-framed mosquito screen on sliding window, Algarve home" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;">
+    </div>
+    <div style="margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:var(--ocean); letter-spacing:1px; text-transform:uppercase; margin-bottom:10px;">Mesh colours available</div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px;">
+        <div style="border-radius:12px; overflow:hidden; border:1px solid rgba(42,127,158,0.15);">
+          <img src="images/mosquito-mesh-grey.jpg" alt="Grey mosquito mesh roll sample" style="width:100%; height:100px; object-fit:cover; display:block;">
+          <div style="text-align:center; font-size:12px; color:var(--muted); padding:6px 0; background:white;">Grey</div>
+        </div>
+        <div style="border-radius:12px; overflow:hidden; border:1px solid rgba(42,127,158,0.15);">
+          <img src="images/mosquito-mesh-black.jpg" alt="Black mosquito mesh roll sample" style="width:100%; height:100px; object-fit:cover; display:block;">
+          <div style="text-align:center; font-size:12px; color:var(--muted); padding:6px 0; background:white;">Black</div>
+        </div>
+        <div style="border-radius:12px; overflow:hidden; border:1px solid rgba(42,127,158,0.15);">
+          <img src="images/mosquito-mesh-white.jpg" alt="White mosquito mesh roll sample" style="width:100%; height:100px; object-fit:cover; display:block;">
+          <div style="text-align:center; font-size:12px; color:var(--muted); padding:6px 0; background:white;">White</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:rgba(42,127,158,0.06); border:1px solid rgba(42,127,158,0.14); border-radius:14px; padding:16px 20px; font-size:13px; color:var(--muted);">
+      Standard 1m × 2m window from <strong style="color:var(--dark);">€40</strong>, materials &amp; installation included. Custom sizes available.
+    </div>
+  </div>
+
+  <div class="cta-strip">
+    <div>
+      <h3 class="serif font-bold text-white mb-2" style="font-size:24px;">Ready to stay cool this summer?</h3>
+      <p style="color:rgba(255,255,255,0.48); font-size:14px;">Free site visit and quote. No commitment.</p>
+    </div>
+    <a href="https://wa.me/351913981175" target="_blank" class="btn glow-wa py-3.5 px-8 rounded-xl font-semibold text-white flex items-center gap-2" style="background:#25D366; white-space:nowrap;">
+      <i class="ti ti-brand-whatsapp"></i> Get Free Quote
+    </a>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════ CAT: HOME ═══════════════════ -->
+<div id="cat-home" class="page">
+<nav class="detail-nav fixed top-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <button onclick="showPage('home')" class="flex items-center gap-2 font-semibold" style="color:var(--ocean);"><i class="ti ti-arrow-left"></i> Back</button>
+    <a href="https://wa.me/351913981175" target="_blank" class="btn glow-wa px-5 py-2.5 rounded-lg font-semibold text-sm text-white flex items-center gap-2" style="background:#25D366;"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
+  </div>
+</nav>
+<section class="detail-hero flex items-end pt-32 pb-14 px-6" style="min-height:240px;">
+  <div class="max-w-4xl mx-auto w-full">
+    <div style="color:var(--ocean-l); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">02 · Home &amp; Furniture</div>
+    <h1 class="serif font-bold text-white mb-4" style="font-size:clamp(32px,5vw,52px);">Home Repairs &amp; Furniture Assembly in Algarve</h1>
+    <p style="color:rgba(255,255,255,0.52); font-size:16px; max-width:540px; line-height:1.75;">The jobs that pile up — plumbing, electrical, furniture, painting — handled quickly, cleanly, and without drama. Standard rate €60/hour.</p>
+  </div>
+</section>
+<div class="max-w-4xl mx-auto px-6 py-16">
+
+  <div class="mb-14">
+    <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">🚿 Plumbing Repairs</h2>
+    <div style="border-radius:16px; overflow:hidden; height:220px; margin-bottom:14px;">
+      <img src="images/plumbing-bathroom.jpg" alt="Modern wall-mounted bathroom faucet and sink in Algarve villa" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:12px;">Fast, reliable plumbing for homes and rental properties — from a dripping tap to a full fixture replacement, so everything's ready for everyday use or guest stays.</p>
+    <div class="flex flex-wrap gap-2"><span class="pill pill-dark">Leak repairs</span><span class="pill pill-dark">Tap &amp; shower installation</span><span class="pill pill-dark">Drain cleaning</span><span class="pill pill-dark">Toilet repair &amp; replacement</span></div>
+  </div>
+
+  <div class="mb-14">
+    <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">⚡ Electrical Repairs</h2>
+    <div style="border-radius:16px; overflow:hidden; height:220px; margin-bottom:14px;">
+      <img src="images/electrical-socket.jpg" alt="Clean modern wall socket and switch installation, Algarve home" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:12px;">Safe, professional electrical work carried out to proper safety standards — from a faulty switch to a new light fixture.</p>
+    <div class="flex flex-wrap gap-2"><span class="pill pill-dark">Socket &amp; switch replacement</span><span class="pill pill-dark">Lighting installation</span><span class="pill pill-dark">Troubleshooting</span><span class="pill pill-dark">Wiring adjustments</span></div>
+  </div>
+
+  <div class="mb-14">
+    <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">📺 TV Mounting &amp; Curtain Rails</h2>
+    <div style="border-radius:16px; overflow:hidden; height:220px; margin-bottom:14px;">
+      <img src="images/pexels-tv-ac-livingroom.jpg" alt="Wall-mounted flat-screen TV with AC unit in modern living room, Algarve" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:12px;">We mount TVs of all sizes with secure wall fixing and tidy cable management, and install curtain rails and blinds with precise, clean finishing.</p>
+    <div class="flex flex-wrap gap-2"><span class="pill pill-dark">TV wall mounting</span><span class="pill pill-dark">Cable management</span><span class="pill pill-dark">Curtain rail installation</span><span class="pill pill-dark">Blind fitting</span></div>
+  </div>
+
+  <div class="mb-14">
+    <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">🧼 Appliance Installation</h2>
+    <div style="border-radius:16px; overflow:hidden; height:220px; margin-bottom:14px;">
+      <img src="images/appliance-dishwasher.jpg" alt="Built-in dishwasher installation in modern Algarve kitchen" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:12px;">Washing machines, dishwashers and other appliances connected properly — water inlet, drainage, positioning and a full functionality check once installed.</p>
+  </div>
+
+  <div class="mb-14">
+    <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">🪑 Furniture Assembly &amp; Repair</h2>
+    <div style="border-radius:16px; overflow:hidden; height:220px; margin-bottom:14px;">
+      <img src="images/furniture-wardrobe.jpg" alt="Assembled light wood wardrobe with folded linens, Algarve bedroom" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:12px;">IKEA, Leroy Merlin, wardrobes, beds, shelving and outdoor furniture — assembled correctly and anchored securely. We also repair loose hinges, drawers and damaged fittings on existing furniture.</p>
+    <div class="flex flex-wrap gap-2"><span class="pill pill-dark">IKEA &amp; Leroy Merlin</span><span class="pill pill-dark">Wardrobes &amp; beds</span><span class="pill pill-dark">Hinge &amp; drawer repair</span><span class="pill pill-dark">Outdoor furniture</span></div>
+  </div>
+
+  <div class="mb-16">
+    <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">🎨 Interior &amp; Exterior Painting</h2>
+    <div style="border-radius:16px; overflow:hidden; height:220px; margin-bottom:14px;">
+      <img src="images/painting-exterior.jpg" alt="Freshly painted white villa exterior wall with paint roller and olive tree, Algarve" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <p style="color:var(--muted); line-height:1.8;">Walls, facades, railings and feature walls finished to a professional standard, with full cleanup once the job's done.</p>
+  </div>
+
+  <div style="background:rgba(42,127,158,0.06); border:1px solid rgba(42,127,158,0.14); border-radius:14px; padding:16px 20px; font-size:13px; color:var(--muted); margin-bottom:48px;">
+    Standard rate <strong style="color:var(--dark);">€60/hour</strong>. Billing starts from the first 30 minutes, then in 30-minute intervals.
+  </div>
+
+  <div class="cta-strip">
+    <div><h3 class="serif font-bold text-white mb-2" style="font-size:24px;">Something needs doing?</h3><p style="color:rgba(255,255,255,0.48); font-size:14px;">Free quote, fast response.</p></div>
+    <a href="https://wa.me/351913981175" target="_blank" class="btn glow-wa py-3.5 px-8 rounded-xl font-semibold text-white flex items-center gap-2" style="background:#25D366; white-space:nowrap;"><i class="ti ti-brand-whatsapp"></i> Get Free Quote</a>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════ CAT: RENTAL ═══════════════════ -->
+<div id="cat-rental" class="page">
+<nav class="detail-nav fixed top-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <button onclick="showPage('home')" class="flex items-center gap-2 font-semibold" style="color:var(--ocean);"><i class="ti ti-arrow-left"></i> Back</button>
+    <a href="https://wa.me/351913981175" target="_blank" class="btn glow-wa px-5 py-2.5 rounded-lg font-semibold text-sm text-white flex items-center gap-2" style="background:#25D366;"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
+  </div>
+</nav>
+<section class="detail-hero flex items-end pt-32 pb-14 px-6" style="min-height:240px;">
+  <div class="max-w-4xl mx-auto w-full">
+    <div style="color:var(--ocean-l); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">03 · Rental Ready</div>
+    <h1 class="serif font-bold text-white mb-4" style="font-size:clamp(32px,5vw,52px);">Rental Property Preparation in Algarve</h1>
+    <p style="color:rgba(255,255,255,0.52); font-size:16px; max-width:540px; line-height:1.75;">5-star reviews start with a property that actually works. We inspect, fix and prepare Airbnb and holiday rentals across Algarve before every check-in.</p>
+  </div>
+</section>
+<div class="max-w-4xl mx-auto px-6 py-16">
+
+  <div class="mb-14">
+    <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">🔍 Pre-Checkin Inspection</h2>
+    <div style="border-radius:16px; overflow:hidden; height:260px; margin-bottom:16px;">
+      <img src="images/rental-inspection-checklist.jpg" alt="Inspection checklist on coffee table in bright Algarve villa living room" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:14px;">We carry out a detailed property inspection before every guest or tenant arrival, helping homeowners, landlords and Airbnb hosts avoid last-minute problems and negative reviews. We check the property carefully and fix smaller issues on the spot.</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px;">
+      <div class="check-item"><i class="ti ti-check" style="color:var(--ocean);"></i> Plumbing &amp; water leaks</div>
+      <div class="check-item"><i class="ti ti-check" style="color:var(--ocean);"></i> Electrical systems &amp; sockets</div>
+      <div class="check-item"><i class="ti ti-check" style="color:var(--ocean);"></i> Furniture condition &amp; stability</div>
+      <div class="check-item"><i class="ti ti-check" style="color:var(--ocean);"></i> TV, AC &amp; appliances</div>
+      <div class="check-item"><i class="ti ti-check" style="color:var(--ocean);"></i> Curtains, blinds &amp; fittings</div>
+      <div class="check-item"><i class="ti ti-check" style="color:var(--ocean);"></i> Doors, locks &amp; handles</div>
+      <div class="check-item"><i class="ti ti-check" style="color:var(--ocean);"></i> Terraces &amp; outdoor areas</div>
+      <div class="check-item"><i class="ti ti-check" style="color:var(--ocean);"></i> General condition check</div>
+    </div>
+  </div>
+
+  <div class="mb-14">
+    <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">⚡ Fix Before Renting</h2>
+    <div style="border-radius:16px; overflow:hidden; height:260px; margin-bottom:16px;">
+      <img src="images/rental-fix-toolbox.jpg" alt="Toolbox and tools on kitchen counter in modern Algarve villa, ready for quick repairs" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:12px;">Guests arrive in a few days and something's broken. We carry out urgent turnaround repairs — minor fixes, furniture adjustments, curtain and TV installation — with a clear quote upfront and same-day response where possible.</p>
+  </div>
+
+  <div class="mb-16">
+    <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">🗓️ Full Season Preparation</h2>
+    <div style="border-radius:16px; overflow:hidden; height:260px; margin-bottom:16px;">
+      <img src="images/rental-season-terrace.jpg" alt="Villa terrace set up for guests with sun lounger, towels and ocean view at sunset, Algarve" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:12px;">Before high season starts: AC servicing, repairs, painting, furniture setup and mosquito screens — everything that turns a stressful changeover into a smooth, professional one.</p>
+    <div class="flex flex-wrap gap-2">
+      <span class="pill pill-dark">Small repairs &amp; maintenance</span>
+      <span class="pill pill-dark">Plumbing &amp; electrical</span>
+      <span class="pill pill-dark">Furniture assembly &amp; adjustments</span>
+      <span class="pill pill-dark">Final checks before check-in</span>
+    </div>
+  </div>
+
+  <div style="background:rgba(42,127,158,0.06); border:1px solid rgba(42,127,158,0.14); border-radius:14px; padding:16px 20px; font-size:13px; color:var(--muted); margin-bottom:48px;">
+    Standard rate <strong style="color:var(--dark);">€60/hour</strong>. Billing starts from the first 30 minutes, then in 30-minute intervals.
+  </div>
+
+  <div class="cta-strip">
+    <div><h3 class="serif font-bold text-white mb-2" style="font-size:24px;">Season prep starts now.</h3><p style="color:rgba(255,255,255,0.48); font-size:14px;">Free site visit and checklist. Same-day response.</p></div>
+    <a href="https://wa.me/351913981175" target="_blank" class="btn glow-wa py-3.5 px-8 rounded-xl font-semibold text-white flex items-center gap-2" style="background:#25D366; white-space:nowrap;"><i class="ti ti-brand-whatsapp"></i> Get Free Quote</a>
+  </div>
+</div>
+</div>
+
+<!-- ═══ SCRIPTS ═══ -->
+<script>
+// Cursor
+const cursor = document.getElementById('cursor');
+let mx=0,my=0,cx=0,cy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+document.querySelectorAll('a,button,.cat-card,.g-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));
+  el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'));
+});
+(function tick(){cx+=(mx-cx)*.2;cy+=(my-cy)*.2;cursor.style.left=cx+'px';cursor.style.top=cy+'px';requestAnimationFrame(tick);})();
+
+// Pages
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+function scrollToSection(id){
+  document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+}
+
+// Gallery filters
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>{
+      b.style.background='transparent'; b.style.color='var(--muted)'; b.style.borderColor='rgba(42,127,158,0.2)';
+    });
+    btn.style.background='var(--dark)'; btn.style.color='white'; btn.style.borderColor='var(--dark)';
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.g-item').forEach(item=>{
+      item.style.display=(f==='all'||item.dataset.cat===f)?'block':'none';
+    });
+  });
+});
+
+// Lightbox
+function openLightbox(el){
+  const img=el.querySelector('img');
+  if(img){document.getElementById('lightbox-img').src=img.src;document.getElementById('lightbox').classList.add('open');}
+}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+
+// GSAP
+if(typeof gsap!=='undefined'){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        gsap.from(e.target,{duration:0.8,y:32,opacity:0,ease:'back.out(1.4)'});
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.glass-strong,.cat-card,.g-item,.cta-strip,.price-row').forEach(el=>obs.observe(el));
+}
+</script>
+</body>
+</html>
