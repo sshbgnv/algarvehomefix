@@ -60,7 +60,70 @@
     "https://www.facebook.com/groups/2419007178377107/user/100065430401413/"
   ],
   "description": "AC servicing, repair and installation, terrace shading, window tinting, home repairs and rental property preparation across Algarve. Free quotes, fair prices.",
-  "knowsLanguage": ["en", "ru"]
+  "knowsLanguage": ["en", "ru"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "6",
+    "bestRating": "5",
+    "worstRating": "5"
+  },
+  "review": [
+    {"@type":"Review","author":{"@type":"Person","name":"Elena Maurel"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Ordered a pergola installation. Everything done at the highest level — our terrace now looks like a magazine cover. Quick, clean, professional."},
+    {"@type":"Review","author":{"@type":"Person","name":"James Hev"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Fixed everything before our guests arrived — AC service, a leaky tap, curtain rails. Professional and reliable. Will use every season."},
+    {"@type":"Review","author":{"@type":"Person","name":"Sophie R."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"They serviced the AC, installed solar film on the windows — the difference is remarkable. Fair price, tidy work. Highly recommended."},
+    {"@type":"Review","author":{"@type":"Person","name":"Markus K."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Every local handyman I called had a 1–2 week waiting list. Algarve Home Fix came the next day and the job was done properly the first time."},
+    {"@type":"Review","author":{"@type":"Person","name":"Anna T."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Assembled an entire bedroom set from IKEA and fixed a wobbly wardrobe door while they were at it. Careful, fast, and left zero mess behind."},
+    {"@type":"Review","author":{"@type":"Person","name":"Ricardo P."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"We run three rental properties and they inspect each one before every guest. Caught a leak we didn't know about before it became a real problem."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does AC servicing cost in Algarve?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Standard AC servicing costs €90–140 per unit and includes filter and coil cleaning, refrigerant check and a performance test. Regas starts from €120. We give a free quote before any work begins."}
+    },
+    {
+      "@type": "Question",
+      "name": "Which areas of Algarve do you cover?",
+      "acceptedAnswer": {"@type": "Answer", "text": "We cover the whole Algarve from Sagres to Olhão, including Vilamoura, Quarteira, Faro, Albufeira, Almancil, Loulé, Vale do Lobo, Quinta do Lago, Tavira, Lagos and Portimão."}
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you respond?",
+      "acceptedAnswer": {"@type": "Answer", "text": "We aim to respond within 24 hours and often arrange a same-day or next-day visit. The fastest way to reach us is WhatsApp — send a photo of the problem and we'll reply right away."}
+    },
+    {
+      "@type": "Question",
+      "name": "Are you insured?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes, fully insured for all work carried out at your property."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work in English?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. We work in English and Russian, which is why many expat homeowners and holiday rental managers across Algarve choose us."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can you handle multiple jobs in one visit?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes, and it's often the most efficient option. Many clients combine AC servicing with minor repairs, curtain or TV installation, or a pre-checkin inspection — all in one trip."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do you prepare Airbnb and holiday rental properties?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Rental property preparation is one of our main services. We carry out pre-checkin inspections, urgent repairs between bookings, and full season preparation before the summer rental period."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is the quote really free?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes — we always provide a free quote before starting work. Send us a photo on WhatsApp, describe what you need, and we'll come back with a clear price, no obligation."}
+    }
+  ]
 }
 </script>
 <script src="https://cdn.tailwindcss.com"></script>
@@ -347,14 +410,18 @@ body {
         Trusted by homeowners across Algarve since 2023
       </div>
 
-      <h1 class="serif font-bold text-white mb-6" style="font-size: clamp(38px,5.5vw,64px); line-height:1.12; letter-spacing:-1px;">
+      <h1 class="serif font-bold text-white mb-3" style="font-size: clamp(38px,5.5vw,64px); line-height:1.12; letter-spacing:-1px;">
         Your property.<br>
         <span style="color:var(--ocean-l);">Protected,</span> comfortable<br>
         and ready.
       </h1>
 
-      <p class="mb-10 leading-relaxed" style="color:rgba(255,255,255,0.58); font-size:17px; font-weight:300; max-width:500px;">
-        AC servicing &amp; installation, home repairs, terrace shading and rental preparation — all across Algarve.
+      <p class="mb-8" style="color:var(--ocean-l); font-size:15px; font-weight:500; letter-spacing:0.2px;">
+        AC servicing &amp; installation · Home repairs · Rental preparation · Terrace shading — Vilamoura, Quarteira, Faro, Albufeira &amp; across Algarve
+      </p>
+
+      <p class="mb-10 leading-relaxed" style="color:rgba(255,255,255,0.52); font-size:16px; font-weight:300; max-width:500px;">
+        One number for everything your property needs — from AC tune-up before summer to a full rental inspection before check-in.
       </p>
 
       <div class="flex gap-4 flex-wrap mb-14">
@@ -756,6 +823,118 @@ body {
         <div><div style="font-weight:600; font-size:13px; color:var(--dark);">Ricardo P.</div><div style="font-size:11px; color:var(--muted);">Vale do Lobo</div></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about" class="max-w-7xl mx-auto px-6 py-16">
+  <div class="mb-10">
+    <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:12px;">About Us</div>
+    <h2 class="serif font-bold" style="font-size:clamp(28px,3.5vw,42px); color:var(--dark);">Algarve people,<br>Algarve property</h2>
+  </div>
+  <div class="grid md:grid-cols-2 gap-12 items-start">
+    <div>
+      <p style="color:var(--muted); line-height:1.85; font-size:15px; margin-bottom:20px;">
+        We are a small, hands-on team based in Quarteira. We've been working across Algarve since 2023, handling everything from a single leaky tap to full pre-season property preparation for landlords managing multiple holiday lets.
+      </p>
+      <p style="color:var(--muted); line-height:1.85; font-size:15px; margin-bottom:24px;">
+        Most of our clients are expat homeowners and holiday rental managers who need a reliable team that speaks English, responds quickly, and doesn't disappear after the first job. That's us.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <div style="display:flex; align-items:center; gap:8px; padding:10px 16px; background:rgba(200,149,90,0.07); border:1px solid rgba(200,149,90,0.16); border-radius:12px; font-size:13px; color:var(--dark);">
+          <i class="ti ti-map-pin" style="color:var(--ocean);"></i> Based in Quarteira, Algarve
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; padding:10px 16px; background:rgba(200,149,90,0.07); border:1px solid rgba(200,149,90,0.16); border-radius:12px; font-size:13px; color:var(--dark);">
+          <i class="ti ti-calendar" style="color:var(--ocean);"></i> Serving Algarve since 2023
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; padding:10px 16px; background:rgba(200,149,90,0.07); border:1px solid rgba(200,149,90,0.16); border-radius:12px; font-size:13px; color:var(--dark);">
+          <i class="ti ti-message-2" style="color:var(--ocean);"></i> English &amp; Russian spoken
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; padding:10px 16px; background:rgba(200,149,90,0.07); border:1px solid rgba(200,149,90,0.16); border-radius:12px; font-size:13px; color:var(--dark);">
+          <i class="ti ti-shield-check" style="color:var(--ocean);"></i> Fully insured
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; padding:10px 16px; background:rgba(200,149,90,0.07); border:1px solid rgba(200,149,90,0.16); border-radius:12px; font-size:13px; color:var(--dark);">
+          <i class="ti ti-tool" style="color:var(--ocean);"></i> 500+ jobs completed
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; padding:10px 16px; background:rgba(200,149,90,0.07); border:1px solid rgba(200,149,90,0.16); border-radius:12px; font-size:13px; color:var(--dark);">
+          <i class="ti ti-clock" style="color:var(--ocean);"></i> Same-day response
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="background:rgba(200,149,90,0.06); border:1px solid rgba(200,149,90,0.14); border-radius:20px; padding:28px 32px;">
+        <div style="font-size:11px; font-weight:700; color:var(--ocean); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px;">What we specialise in</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <i class="ti ti-snowflake" style="color:var(--ocean); margin-top:2px; flex-shrink:0;"></i>
+            <div><strong style="font-size:14px; color:var(--dark);">AC &amp; Climate Control</strong><br><span style="font-size:13px; color:var(--muted);">Servicing, regas, installation, repair — Daikin, Mitsubishi, LG and all major brands</span></div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <i class="ti ti-tools" style="color:var(--ocean); margin-top:2px; flex-shrink:0;"></i>
+            <div><strong style="font-size:14px; color:var(--dark);">Home Repairs &amp; Assembly</strong><br><span style="font-size:13px; color:var(--muted);">Plumbing, electrical, furniture assembly, TV mounting, painting</span></div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <i class="ti ti-home-check" style="color:var(--ocean); margin-top:2px; flex-shrink:0;"></i>
+            <div><strong style="font-size:14px; color:var(--dark);">Rental Property Preparation</strong><br><span style="font-size:13px; color:var(--muted);">Pre-checkin inspections, urgent fixes between bookings, full season setup</span></div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <i class="ti ti-sun" style="color:var(--ocean); margin-top:2px; flex-shrink:0;"></i>
+            <div><strong style="font-size:14px; color:var(--dark);">Outdoor &amp; Shading</strong><br><span style="font-size:13px; color:var(--muted);">Pergolas, terrace awnings, window tinting, mosquito screens</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq" class="max-w-7xl mx-auto px-6 py-16">
+  <div class="mb-10">
+    <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:12px;">FAQ</div>
+    <h2 class="serif font-bold" style="font-size:clamp(28px,3.5vw,42px); color:var(--dark);">Common questions</h2>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:2px; max-width:760px;">
+
+    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">How much does AC servicing cost in Algarve?</div>
+      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">Standard service costs €90–140 per unit and includes filter and coil cleaning, refrigerant check and a performance test. Regas starts from €120. We always give a free quote before any work begins.</p>
+    </div>
+
+    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">Which areas of Algarve do you cover?</div>
+      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">The whole Algarve — from Sagres to Olhão. Including Vilamoura, Quarteira, Faro, Albufeira, Almancil, Loulé, Vale do Lobo, Quinta do Lago, Tavira, Lagos and Portimão.</p>
+    </div>
+
+    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">How quickly can you respond?</div>
+      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">We aim to respond within 24 hours and often arrange a same-day or next-day visit. Fastest way: WhatsApp — send a photo of the problem and we'll reply straight away.</p>
+    </div>
+
+    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">Are you insured?</div>
+      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">Yes, fully insured for all work carried out at your property.</p>
+    </div>
+
+    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">Do you work in English?</div>
+      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">Yes. We work in English and Russian — which is why many expat homeowners and holiday rental managers across Algarve choose us.</p>
+    </div>
+
+    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">Can you handle multiple jobs in one visit?</div>
+      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">Yes, and it's often the most efficient option. Many clients combine AC servicing with minor repairs, TV or curtain rail installation, or a pre-checkin inspection — all in one trip.</p>
+    </div>
+
+    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">Do you prepare Airbnb and holiday rental properties?</div>
+      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">Yes. We carry out pre-checkin inspections, urgent repairs between bookings, and full season preparation before the summer rental period. See our <a href="rental.html" style="color:var(--ocean); text-decoration:none; font-weight:500;">Rental Preparation page</a> for details.</p>
+    </div>
+
+    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">Is the quote really free?</div>
+      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">Yes — always. Send us a photo on WhatsApp, describe what you need, and we'll come back with a clear price. No commitment, no call-out fee.</p>
+    </div>
+
   </div>
 </section>
 
