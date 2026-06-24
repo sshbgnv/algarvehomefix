@@ -823,14 +823,16 @@ body {
     <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:12px;">About Us</div>
     <h2 class="serif font-bold" style="font-size:clamp(28px,3.5vw,42px); color:var(--dark);">Algarve people,<br>Algarve property</h2>
   </div>
-  <div class="grid md:grid-cols-2 gap-12 items-start">
-    <div>
+  <div class="grid md:grid-cols-2 gap-12 items-stretch">
+    <div style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
       <p style="color:var(--muted); line-height:1.85; font-size:15px; margin-bottom:20px;">
-        We are a small, hands-on team based in Quarteira. We've been working across Algarve since 2023, handling everything from a single leaky tap to full pre-season property preparation for landlords managing multiple holiday lets.
+        Based in Quarteira, we've been working across Algarve since 2023. Our work covers air conditioning servicing, regas and installation, home repairs and assembly, outdoor shading, and full pre-season property preparation — from a single job to managing multiple holiday lets year-round.
       </p>
       <p style="color:var(--muted); line-height:1.85; font-size:15px; margin-bottom:24px;">
-        Most of our clients are expat homeowners and holiday rental managers who need a reliable team that speaks English, responds quickly, and doesn't disappear after the first job. That's us.
+        Most of our clients are expat homeowners and holiday rental managers who need someone reliable: English-speaking, quick to respond, and consistent job after job.
       </p>
+      </div>
       <div class="flex flex-wrap gap-3">
         <div style="display:flex; align-items:center; gap:8px; padding:10px 16px; background:rgba(200,149,90,0.07); border:1px solid rgba(200,149,90,0.16); border-radius:12px; font-size:13px; color:var(--dark);">
           <i class="ti ti-map-pin" style="color:var(--ocean);"></i> Based in Quarteira, Algarve
@@ -852,8 +854,8 @@ body {
         </div>
       </div>
     </div>
-    <div>
-      <div style="background:rgba(200,149,90,0.06); border:1px solid rgba(200,149,90,0.14); border-radius:20px; padding:28px 32px;">
+    <div style="display:flex; flex-direction:column;">
+      <div style="background:rgba(200,149,90,0.06); border:1px solid rgba(200,149,90,0.14); border-radius:20px; padding:28px 32px; flex:1;">
         <div style="font-size:11px; font-weight:700; color:var(--ocean); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px;">What we specialise in</div>
         <div style="display:flex; flex-direction:column; gap:12px;">
           <div style="display:flex; gap:12px; align-items:flex-start;">
@@ -884,7 +886,7 @@ body {
     <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:12px;">FAQ</div>
     <h2 class="serif font-bold" style="font-size:clamp(28px,3.5vw,42px); color:var(--dark);">Common questions</h2>
   </div>
-  <div style="display:flex; flex-direction:column; gap:2px; max-width:760px;">
+  <div style="display:flex; flex-direction:column; gap:2px;">
 
     <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
       <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">How much does AC servicing cost in Algarve?</div>
@@ -983,31 +985,31 @@ body {
         <div style="font-size:11px; font-weight:700; color:var(--ocean); letter-spacing:1px; text-transform:uppercase; margin-bottom:8px;">Coverage</div>
         <p style="font-size:14px; color:var(--muted); line-height:1.7;">From Sagres to Olhão — and inland across Central Algarve</p>
       </div>
-      <div style="border-radius:16px; overflow:hidden; border:1px solid rgba(200,149,90,0.18); height:240px;">
+    </div>
+    <div class="flex flex-col" style="gap:16px;">
+      <div class="glass-strong rounded-2xl" style="padding:24px 28px;">
+        <h3 class="serif font-bold mb-2" style="font-size:24px; color:var(--dark);">Ready to get started?</h3>
+        <p style="color:var(--muted); font-size:14px; line-height:1.75; margin-bottom:20px;">The fastest way is WhatsApp — send us a photo and a few words about what you need. We respond the same day.</p>
+        <div class="flex flex-col gap-3">
+          <a href="https://wa.me/351913981175" target="_blank"
+             class="btn glow-wa py-4 rounded-xl font-semibold text-white text-center flex items-center justify-center gap-2"
+             style="background:#25D366; font-size:16px;">
+            <i class="ti ti-brand-whatsapp text-xl"></i> Message on WhatsApp
+          </a>
+          <a href="mailto:Algarvehomefix@gmail.com"
+             class="btn py-4 rounded-xl font-semibold text-center flex items-center justify-center gap-2"
+             style="background:rgba(200,149,90,0.06); border:1px solid rgba(200,149,90,0.18); color:var(--ocean-d); font-size:15px;">
+            <i class="ti ti-mail"></i> Send an Email
+          </a>
+        </div>
+      </div>
+      <div style="border-radius:16px; overflow:hidden; border:1px solid rgba(200,149,90,0.18); flex:1; min-height:320px;">
         <iframe
           src="https://www.google.com/maps?q=Quarteira,Portugal&z=12&output=embed"
           width="100%" height="100%" style="border:0; display:block;"
           loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           title="Algarve Home Fix service area — Quarteira, Algarve">
         </iframe>
-      </div>
-    </div>
-    <div class="glass-strong rounded-2xl p-10 flex flex-col justify-center gap-6">
-      <div>
-        <h3 class="serif font-bold mb-2" style="font-size:24px; color:var(--dark);">Ready to get started?</h3>
-        <p style="color:var(--muted); font-size:14px; line-height:1.75;">The fastest way is WhatsApp — send us a photo and a few words about what you need. We respond the same day.</p>
-      </div>
-      <div class="flex flex-col gap-3">
-        <a href="https://wa.me/351913981175" target="_blank"
-           class="btn glow-wa py-4 rounded-xl font-semibold text-white text-center flex items-center justify-center gap-2"
-           style="background:#25D366; font-size:16px;">
-          <i class="ti ti-brand-whatsapp text-xl"></i> Message on WhatsApp
-        </a>
-        <a href="mailto:Algarvehomefix@gmail.com"
-           class="btn py-4 rounded-xl font-semibold text-center flex items-center justify-center gap-2"
-           style="background:rgba(200,149,90,0.06); border:1px solid rgba(200,149,90,0.18); color:var(--ocean-d); font-size:15px;">
-          <i class="ti ti-mail"></i> Send an Email
-        </a>
       </div>
     </div>
   </div>
