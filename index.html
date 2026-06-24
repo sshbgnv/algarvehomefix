@@ -364,6 +364,7 @@ body {
 }
 
 @media (max-width: 768px) {
+  .hero-bg { min-height: auto; }
   .trust-bar { grid-template-columns: 1fr 1fr; }
   .trust-item { border-right: none; border-bottom: 1px solid rgba(200,149,90,0.12); }
   .trust-item:last-child { border-bottom: none; }
@@ -418,10 +419,10 @@ body {
 </nav>
 
 <!-- HERO -->
-<section class="hero-bg flex items-center relative overflow-hidden pt-20 pb-16 md:pb-24" style="min-height: 100vh;">
+<section class="hero-bg flex items-center relative overflow-hidden pt-14 pb-8 md:pb-24" style="min-height: 100vh;">
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
-  <div class="max-w-7xl mx-auto px-6 py-12 md:py-24 w-full grid md:grid-cols-2 gap-16 items-center relative z-10">
+  <div class="max-w-7xl mx-auto px-6 py-6 md:py-24 w-full grid md:grid-cols-2 gap-8 md:gap-16 items-center relative z-10">
     <div>
       <div class="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full text-sm"
            style="background:rgba(200,149,90,0.15); border:1px solid rgba(200,149,90,0.3); color:rgba(255,255,255,0.7); font-weight:500;">
@@ -438,11 +439,7 @@ body {
         AC servicing &amp; installation · Home repairs · Rental preparation · Terrace shading — Vilamoura, Quarteira, Faro, Albufeira &amp; across Algarve
       </p>
 
-      <p class="mb-10 leading-relaxed" style="color:rgba(255,255,255,0.52); font-size:16px; font-weight:300; max-width:500px;">
-        One number for everything your property needs — from AC tune-up before summer to a full rental inspection before check-in.
-      </p>
-
-      <div class="flex gap-4 flex-wrap mb-14">
+      <div class="flex gap-4 flex-wrap mb-8 md:mb-14">
         <a href="https://wa.me/351913981175" target="_blank"
            class="btn glow-wa px-8 py-3.5 rounded-xl font-semibold text-white flex items-center gap-2"
            style="background:#25D366; font-size:15px;">
@@ -455,7 +452,7 @@ body {
         </button>
       </div>
 
-      <div class="flex gap-10">
+      <div class="flex gap-6 md:gap-10">
         <div>
           <div class="serif font-bold" style="font-size:32px; color:var(--ocean-l);">500+</div>
           <div style="font-size:11px; color:rgba(255,255,255,0.4); letter-spacing:0.5px; margin-top:4px;">Jobs done</div>
@@ -474,7 +471,7 @@ body {
     </div>
 
     <!-- Hero photo: modern villa, Algarve -->
-    <div class="rounded-2xl overflow-hidden" style="height:420px; border:1px solid rgba(200,149,90,0.2);">
+    <div class="rounded-2xl overflow-hidden h-[220px] md:h-[420px]" style="border:1px solid rgba(200,149,90,0.2);">
       <img fetchpriority="high" src="images/hero-villa.jpg" alt="Modern minimalist villa in Algarve, exterior with large windows and shaded terrace" style="width:100%; height:100%; object-fit:cover;">
     </div>
   </div>
