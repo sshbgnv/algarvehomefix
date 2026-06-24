@@ -355,7 +355,7 @@ body {
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .g-item:first-child, .g-item:nth-child(4) { grid-column: span 2; height: 200px; }
   .cta-strip { text-align: center; justify-content: center; padding: 32px 20px; }
-  .hero-badge { font-size: 11px; padding: 6px 14px; white-space: nowrap; }
+  .hero-badge { font-size: 11px; padding: 6px 14px; }
   .wa-float { display: none; }
   .hero-btns { flex-wrap: nowrap; gap: 10px; }
   .hero-btns > * { padding-left: 16px !important; padding-right: 16px !important; font-size: 13px !important; }
@@ -414,7 +414,7 @@ body {
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
   <div class="max-w-7xl mx-auto px-6 py-6 md:py-24 w-full grid md:grid-cols-2 gap-8 md:gap-16 items-center relative z-10">
-    <div>
+    <div style="min-width:0;">
       <div class="hero-badge inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full text-sm"
            style="background:rgba(200,149,90,0.15); border:1px solid rgba(200,149,90,0.3); color:rgba(255,255,255,0.7); font-weight:500;">
         Trusted by homeowners across Algarve since 2023
@@ -462,7 +462,7 @@ body {
     </div>
 
     <!-- Hero photo: modern villa, Algarve -->
-    <div class="rounded-2xl overflow-hidden h-[220px] md:h-[420px]" style="border:1px solid rgba(200,149,90,0.2);">
+    <div class="rounded-2xl overflow-hidden h-[220px] md:h-[420px]" style="border:1px solid rgba(200,149,90,0.2); min-width:0;">
       <img fetchpriority="high" src="images/hero-villa.jpg" alt="Modern minimalist villa in Algarve, exterior with large windows and shaded terrace" style="width:100%; height:100%; object-fit:cover;">
     </div>
   </div>
