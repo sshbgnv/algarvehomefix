@@ -271,6 +271,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 220px 220px 220px 220px 220px;
+  grid-auto-rows: 220px;
   gap: 12px;
 }
 .g-item {
@@ -350,12 +351,16 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero-bg { min-height: auto; }
+  .hero-bg { min-height: auto !important; }
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .g-item:first-child, .g-item:nth-child(4) { grid-column: span 2; height: 200px; }
-  .cta-strip { text-align: center; justify-content: center; }
+  .cta-strip { text-align: center; justify-content: center; padding: 32px 20px; }
   .hero-badge { font-size: 11px; padding: 6px 14px; white-space: nowrap; }
   .wa-float { display: none; }
+  .hero-btns { flex-wrap: nowrap; gap: 10px; }
+  .hero-btns > * { padding-left: 16px !important; padding-right: 16px !important; font-size: 13px !important; }
+  .cta-btns { flex-wrap: nowrap; gap: 8px; }
+  .cta-btns > * { padding-left: 14px !important; padding-right: 14px !important; font-size: 13px !important; }
 }
 </style>
 </head>
@@ -424,7 +429,7 @@ body {
         AC servicing &amp; installation · Home repairs · Rental preparation · Terrace shading — Vilamoura, Quarteira, Faro, Albufeira &amp; across Algarve
       </p>
 
-      <div class="flex gap-4 flex-wrap mb-8 md:mb-14">
+      <div class="hero-btns flex gap-4 flex-wrap mb-8 md:mb-14">
         <a href="https://wa.me/351913981175" target="_blank"
            class="btn glow-wa px-8 py-3.5 rounded-xl font-semibold text-white flex items-center gap-2"
            style="background:#25D366; font-size:15px;">
@@ -469,36 +474,31 @@ body {
     <h2 class="serif font-bold mb-4" style="font-size:clamp(34px,4.5vw,52px); color:var(--dark); line-height:1.12;">Every comfort.<br>One team.</h2>
   </div>
 
-  <div class="flex flex-col gap-6">
+  <div class="grid md:grid-cols-2 gap-6">
 
     <!-- CAT 1: AC & COOLING -->
-    <div class="cat-card cat-dark" style="overflow:hidden; cursor:pointer;" onclick="window.location.href='ac.html'">
-      <div class="flex flex-col-reverse md:flex-row md:items-stretch">
-        <div style="flex:1; padding:32px 36px;" class="md:p-10">
-          <div style="color:var(--ocean-l); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;">01 · Priority Service</div>
-          <h3 class="serif font-bold text-white mb-3" style="font-size:clamp(26px,3.5vw,38px);">AC & Climate Control</h3>
-          <p style="color:rgba(255,255,255,0.52); line-height:1.78; font-size:15px; max-width:480px; margin-bottom:18px;">
-            Your AC unit needs attention before summer hits. We service, repair, regas and install air conditioning across Vilamoura, Quarteira, Faro and the wider Algarve — keeping your home cool when it matters most.
-          </p>
-          <div class="flex flex-wrap mb-6">
-            <a href="ac.html#ac-servicing" class="pill pill-light" onclick="event.stopPropagation()">Servicing &amp; Cleaning</a>
-            <a href="ac.html#ac-servicing" class="pill pill-light" onclick="event.stopPropagation()">Regas &amp; Diagnostics</a>
-            <a href="ac.html#ac-servicing" class="pill pill-light" onclick="event.stopPropagation()">Repair</a>
-            <a href="ac.html#ac-supply" class="pill pill-light" onclick="event.stopPropagation()">Supply &amp; Install</a>
-          </div>
-          <div class="flex items-center gap-3">
-            <span style="color:rgba(255,255,255,0.3); font-size:13px; white-space:nowrap;">View services</span>
-            <div class="btn flex items-center justify-center w-11 h-11 rounded-full"
-                 style="background:rgba(200,149,90,0.2); border:1px solid rgba(200,149,90,0.4); color:var(--ocean-l); font-size:20px;">→</div>
-          </div>
+    <div class="cat-card glass-strong" style="overflow:hidden; padding:0; cursor:pointer;" onclick="window.location.href='ac.html'">
+      <div style="width:100%; height:180px;">
+        <img loading="lazy" src="images/ac-install.jpg" alt="Daikin outdoor AC unit installed on modern villa exterior wall, Algarve" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div style="padding:32px;">
+        <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;">01 · Priority Service</div>
+        <h3 class="serif font-bold mb-3" style="font-size:clamp(22px,3vw,30px); color:var(--dark);">AC &amp; Climate Control</h3>
+        <p style="color:var(--muted); line-height:1.78; font-size:14px; margin-bottom:18px;">
+          Your AC unit needs attention before summer hits. We service, repair, regas and install air conditioning across Vilamoura, Quarteira, Faro and the wider Algarve — keeping your home cool when it matters most.
+        </p>
+        <div class="flex flex-wrap mb-6">
+          <a href="ac.html#ac-servicing" class="pill pill-dark" onclick="event.stopPropagation()">Servicing &amp; Cleaning</a>
+          <a href="ac.html#ac-servicing" class="pill pill-dark" onclick="event.stopPropagation()">Regas &amp; Diagnostics</a>
+          <a href="ac.html#ac-servicing" class="pill pill-dark" onclick="event.stopPropagation()">Repair</a>
+          <a href="ac.html#ac-supply" class="pill pill-dark" onclick="event.stopPropagation()">Supply &amp; Install</a>
         </div>
-        <div style="flex:0 0 42%; min-height:220px; position:relative;" class="md:min-h-[260px]">
-          <img loading="lazy" src="images/ac-install.jpg" alt="Daikin outdoor AC unit installed on modern villa exterior wall, Algarve" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;">
+        <div class="flex justify-end">
+          <div class="btn flex items-center justify-center w-10 h-10 rounded-full"
+               style="background:rgba(200,149,90,0.08); border:1px solid rgba(200,149,90,0.2); color:var(--ocean); font-size:18px;">→</div>
         </div>
       </div>
     </div>
-    <!-- CAT 2, 3 & 4 -->
-    <div class="grid md:grid-cols-3 gap-6">
 
       <div class="cat-card glass-strong" style="overflow:hidden; padding:0; cursor:pointer;" onclick="window.location.href='shade.html'">
         <div style="width:100%; height:180px;">
@@ -565,7 +565,6 @@ body {
           </div>
         </div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -577,7 +576,7 @@ body {
       <h3 class="serif font-bold text-white" style="font-size:28px; margin-bottom:8px;">Not sure what you need?</h3>
       <p style="color:rgba(255,255,255,0.48); font-size:14px;">Send us a message — we'll visit, assess and give you a quote. No commitment.</p>
     </div>
-    <div class="flex gap-4 flex-wrap">
+    <div class="cta-btns flex gap-4 flex-wrap">
       <a href="https://wa.me/351913981175" target="_blank"
          class="btn glow-wa px-7 py-3.5 rounded-xl font-semibold text-white flex items-center gap-2"
          style="background:#25D366; font-size:14px;">
@@ -615,32 +614,20 @@ body {
 
   <div class="gallery-grid" id="gallery-grid">
     <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
-      <img loading="lazy" src="images/real-pergola-sky-view.jpg" alt="View looking up at woven fabric pergola shade canopy against blue sky, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <img loading="lazy" src="images/real-pergola-sky-view.jpg" alt="View looking up at woven fabric pergola shade canopy against blue sky, Algarve" style="width:100%;height:100%;object-fit:contain;">
       <div class="g-label">Pergola Shading · Algarve</div>
     </div>
-    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
-      <img loading="lazy" src="images/ac-supply-main.jpg" alt="Daikin outdoor AC units installed on villa exterior wall, Algarve" style="width:100%;height:100%;object-fit:cover;">
-      <div class="g-label">AC Installation · Vilamoura</div>
-    </div>
     <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
-      <img loading="lazy" src="images/real-wardrobe-storage-1.jpg" alt="Organised storage wardrobe with safe and household items, Algarve home" style="width:100%;height:100%;object-fit:cover;">
+      <img loading="lazy" src="images/real-wardrobe-storage-1.jpg" alt="Organised storage wardrobe with safe and household items, Algarve home" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
       <div class="g-label">Storage Organisation · Faro</div>
     </div>
     <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
       <img loading="lazy" src="images/real-mosquito-screen-closeup.jpg" alt="Mosquito screen frame close-up, installed on sliding window, Algarve" style="width:100%;height:100%;object-fit:cover;">
       <div class="g-label">Mosquito Screens · Quarteira</div>
     </div>
-    <div class="g-item" data-cat="rental" onclick="openLightbox(this)">
-      <img loading="lazy" src="images/rental-season-terrace.jpg" alt="Villa terrace prepared for guests with sun lounger and ocean view, Algarve rental" style="width:100%;height:100%;object-fit:cover;">
-      <div class="g-label">Rental Prep · Vale do Lobo</div>
-    </div>
     <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
       <img loading="lazy" src="images/pexels-drill-hinge-repair.jpg" alt="Close-up of hinge repair with power drill on wooden furniture, Algarve" style="width:100%;height:100%;object-fit:cover;">
       <div class="g-label">Furniture Repair · Algarve</div>
-    </div>
-    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
-      <img loading="lazy" src="images/pexels-ac-remote-hand.jpg" alt="Hand holding AC remote control, adjusting temperature in modern home" style="width:100%;height:100%;object-fit:cover;">
-      <div class="g-label">AC Comfort · Algarve</div>
     </div>
     <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
       <img loading="lazy" src="images/shading-pergola-detail.jpg" alt="Close-up of wooden pergola lattice with woven shade panels, sunset light" style="width:100%;height:100%;object-fit:cover;">
@@ -649,10 +636,6 @@ body {
     <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
       <img loading="lazy" src="images/shading-install-process.jpg" alt="Fabric shade canopy being installed on wooden pergola frame" style="width:100%;height:100%;object-fit:cover;">
       <div class="g-label">Shade Installation · Algarve</div>
-    </div>
-    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
-      <img loading="lazy" src="images/shade-patio-wicker.jpg" alt="Covered patio with wicker furniture under wooden pergola roof, Algarve" style="width:100%;height:100%;object-fit:cover;">
-      <div class="g-label">Covered Patio · Algarve</div>
     </div>
     <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
       <img loading="lazy" src="images/shade-lounge-mesh.jpg" alt="Outdoor lounge area shaded by woven mesh pergola roof, Algarve villa" style="width:100%;height:100%;object-fit:cover;">
@@ -667,7 +650,7 @@ body {
       <div class="g-label">Tinting Before/After · Algarve</div>
     </div>
     <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
-      <img loading="lazy" src="images/tint-corridor-columns.jpg" alt="Glass corridor with tinted windows and white columns, sunlit interior" style="width:100%;height:100%;object-fit:cover;">
+      <img loading="lazy" src="images/tint-corridor-columns.jpg" alt="Glass corridor with tinted windows and white columns, sunlit interior" style="width:100%;height:100%;object-fit:contain;">
       <div class="g-label">Tinted Corridor · Algarve</div>
     </div>
     <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
