@@ -228,18 +228,6 @@ body {
   pointer-events: none;
 }
 
-/* TRUST BAR */
-.trust-bar {
-  display: grid; grid-template-columns: repeat(5, 1fr);
-}
-.trust-item {
-  padding: 22px 16px; text-align: center;
-  border-right: 1px solid rgba(200,149,90,0.12);
-  font-size: 13px; font-weight: 600; color: var(--dark);
-  line-height: 1.4;
-}
-.trust-item:last-child { border-right: none; }
-
 /* CATEGORY CARDS */
 .cat-card {
   border-radius: 20px; overflow: hidden;
@@ -365,9 +353,6 @@ body {
 
 @media (max-width: 768px) {
   .hero-bg { min-height: auto; }
-  .trust-bar { grid-template-columns: 1fr 1fr; }
-  .trust-item { border-right: none; border-bottom: 1px solid rgba(200,149,90,0.12); }
-  .trust-item:last-child { border-bottom: none; }
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .g-item:first-child, .g-item:nth-child(4) { grid-column: span 2; height: 200px; }
   .cta-strip { text-align: center; justify-content: center; }
@@ -476,17 +461,6 @@ body {
     </div>
   </div>
 </section>
-
-<!-- TRUST BAR -->
-<div class="max-w-7xl mx-auto px-6 -mt-6 md:-mt-8 relative z-20 mb-20">
-  <div class="glass-strong rounded-2xl trust-bar">
-    <div class="trust-item">Free On-Site Quote</div>
-    <div class="trust-item">Response within 24h</div>
-    <div class="trust-item">Fully Insured</div>
-    <div class="trust-item">English &amp; Russian</div>
-    <div class="trust-item">Algarve-Based Team</div>
-  </div>
-</div>
 
 <!-- ═══ SERVICES ═══ -->
 <section id="services" class="max-w-7xl mx-auto px-6 py-16">
@@ -987,6 +961,20 @@ body {
         <div>
           <div style="font-size:11px; font-weight:600; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-bottom:5px;">Location</div>
           <p style="font-size:15px; color:var(--dark); line-height:1.6;">Based in Quarteira<br>Algarve, Portugal</p>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon"><i class="ti ti-shield-check"></i></div>
+        <div>
+          <div style="font-size:11px; font-weight:600; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-bottom:5px;">Insurance</div>
+          <p style="font-size:15px; color:var(--dark); line-height:1.6;">Fully insured for all work</p>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon"><i class="ti ti-message-2"></i></div>
+        <div>
+          <div style="font-size:11px; font-weight:600; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-bottom:5px;">Languages</div>
+          <p style="font-size:15px; color:var(--dark); line-height:1.6;">English &amp; Russian</p>
         </div>
       </div>
       <div style="margin-top:8px; padding:18px 20px; background:rgba(200,149,90,0.06); border-radius:14px; border:1px solid rgba(200,149,90,0.14); margin-bottom:20px;">
