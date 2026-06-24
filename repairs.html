@@ -60,7 +60,7 @@
   --white:   #FFFFFF;
 }
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--dark); overflow-x: hidden; }
 .serif { font-family: 'Playfair Display', serif; }
 .btn { transition: all 0.28s cubic-bezier(0.34,1.56,0.64,1); }
@@ -75,7 +75,7 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
 .detail-hero { background: linear-gradient(155deg, var(--ocean-d) 0%, #A08568 100%); }
 .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 200; width: 60px; height: 60px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,0.45); transition: transform .25s, box-shadow .25s; text-decoration: none; }
 .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,0.55); }
-@media (max-width: 768px) { .cta-strip { padding: 36px 28px; flex-direction: column; align-items: flex-start; } }
+@media (max-width: 768px) { .cta-strip { padding: 36px 28px; flex-direction: column; align-items: flex-start; } .wa-float { display: none; } }
 </style>
 </head>
 <body>
@@ -98,7 +98,7 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
 <section class="detail-hero flex items-end pt-32 pb-14 px-6" style="min-height:280px; position:relative; overflow:hidden;">
   <div style="position:absolute;top:-100px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(200,149,90,0.2) 0%,transparent 60%);pointer-events:none;"></div>
   <div class="max-w-4xl mx-auto w-full relative z-10">
-    <div style="color:var(--ocean-l); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">02 · Home &amp; Furniture</div>
+    <div style="color:var(--ocean-l); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">03 · Home &amp; Furniture</div>
     <h1 class="serif font-bold text-white mb-4" style="font-size:clamp(32px,5vw,52px);">Home Repairs &amp; Furniture Assembly in Algarve</h1>
     <p style="color:rgba(255,255,255,0.62); font-size:16px; max-width:540px; line-height:1.75;">The jobs that pile up — plumbing, electrical, furniture, painting — handled quickly, cleanly, and without drama. Standard rate €60/hour.</p>
   </div>
@@ -106,7 +106,7 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
 
 <div class="max-w-4xl mx-auto px-6 py-16">
 
-  <div class="mb-14">
+  <div class="mb-14" id="plumbing">
     <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">🚿 Plumbing Repairs</h2>
     <div style="border-radius:16px; overflow:hidden; height:220px; margin-bottom:14px;">
       <img loading="lazy" src="images/plumbing-bathroom.jpg" alt="Modern wall-mounted bathroom faucet and sink in Algarve villa" style="width:100%; height:100%; object-fit:cover;">
@@ -121,7 +121,7 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
     </div>
   </div>
 
-  <div class="mb-14">
+  <div class="mb-14" id="electrical">
     <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">⚡ Electrical Repairs</h2>
     <div style="border-radius:16px; overflow:hidden; height:220px; margin-bottom:14px;">
       <img loading="lazy" src="images/electrical-repairs-main.jpg" alt="Clean modern wall socket and switch installation, Algarve home" style="width:100%; height:100%; object-fit:cover;">
@@ -136,7 +136,7 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
     </div>
   </div>
 
-  <div class="mb-14">
+  <div class="mb-14" id="tv-mounting">
     <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">📺 TV Mounting &amp; Curtain Rails</h2>
     <div style="border-radius:16px; overflow:hidden; height:220px; margin-bottom:14px;">
       <img loading="lazy" src="images/pexels-tv-ac-livingroom.jpg" alt="Wall-mounted flat-screen TV with AC unit in modern living room, Algarve" style="width:100%; height:100%; object-fit:cover;">
@@ -151,7 +151,7 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
     </div>
   </div>
 
-  <div class="mb-14">
+  <div class="mb-14" id="appliances">
     <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">🧼 Appliance Installation</h2>
     <div style="border-radius:16px; overflow:hidden; height:220px; margin-bottom:14px;">
       <img loading="lazy" src="images/appliance-dishwasher.jpg" alt="Built-in dishwasher installation in modern Algarve kitchen" style="width:100%; height:100%; object-fit:cover;">
@@ -160,7 +160,7 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
     <p style="color:var(--muted); line-height:1.8; margin-bottom:12px;">Portuguese mains supply is 230V/50Hz with Schuko (Type F) sockets rated at 16A. Most modern appliances are compatible, but we check the circuit can handle the load before connecting — a washing machine and dishwasher sharing the same circuit can cause nuisance tripping. Water hoses are connected to isolation valves using quality braided connections, and drainage is routed without kinks that cause blockages over time. We level the machine and run a short test cycle before leaving so you know it works, the door seals properly, and there are no leaks underneath.</p>
   </div>
 
-  <div class="mb-14">
+  <div class="mb-14" id="furniture-assembly">
     <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">🪑 Furniture Assembly &amp; Repair</h2>
     <div style="border-radius:16px; overflow:hidden; height:220px; margin-bottom:14px;">
       <img loading="lazy" src="images/furniture-wardrobe.jpg" alt="Assembled light wood wardrobe with folded linens, Algarve bedroom" style="width:100%; height:100%; object-fit:cover;">
@@ -179,7 +179,7 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
     </div>
   </div>
 
-  <div class="mb-16">
+  <div class="mb-16" id="painting">
     <h2 class="serif font-bold mb-4" style="font-size:26px; color:var(--dark);">🎨 Interior &amp; Exterior Painting</h2>
     <div style="border-radius:16px; overflow:hidden; height:220px; margin-bottom:14px;">
       <img loading="lazy" src="images/painting-main.jpg" alt="Freshly painted white villa exterior wall with paint roller and olive tree, Algarve" style="width:100%; height:100%; object-fit:cover;">

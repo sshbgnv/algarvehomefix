@@ -67,11 +67,9 @@
     "name": "Home Services Algarve",
     "itemListElement": [
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AC Servicing & Installation", "url": "https://www.algarvehomefix.com/ac.html"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Shade & Sun Control", "url": "https://www.algarvehomefix.com/shade.html"}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Home Repairs & Maintenance", "url": "https://www.algarvehomefix.com/repairs.html"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Rental Property Preparation", "url": "https://www.algarvehomefix.com/rental.html"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Terrace Shading & Pergolas"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Window Tinting & Solar Film"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mosquito Screen Replacement"}}
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Rental Property Preparation", "url": "https://www.algarvehomefix.com/rental.html"}}
     ]
   },
   "sameAs": [
@@ -244,7 +242,7 @@ body {
 .pill {
   display: inline-flex; align-items: center; gap: 5px;
   font-size: 12px; font-weight: 500; margin: 3px;
-  padding: 5px 12px; border-radius: 100px;
+  padding: 5px 12px; border-radius: 100px; text-decoration: none;
 }
 .pill-light {
   border: 1px solid rgba(200,149,90,0.28); color: rgba(255,255,255,0.7);
@@ -356,6 +354,8 @@ body {
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .g-item:first-child, .g-item:nth-child(4) { grid-column: span 2; height: 200px; }
   .cta-strip { text-align: center; justify-content: center; }
+  .hero-badge { font-size: 11px; padding: 6px 14px; white-space: nowrap; }
+  .wa-float { display: none; }
 }
 </style>
 </head>
@@ -409,7 +409,7 @@ body {
   <div class="hero-glow-2"></div>
   <div class="max-w-7xl mx-auto px-6 py-6 md:py-24 w-full grid md:grid-cols-2 gap-8 md:gap-16 items-center relative z-10">
     <div>
-      <div class="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full text-sm"
+      <div class="hero-badge inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full text-sm"
            style="background:rgba(200,149,90,0.15); border:1px solid rgba(200,149,90,0.3); color:rgba(255,255,255,0.7); font-weight:500;">
         Trusted by homeowners across Algarve since 2023
       </div>
@@ -472,7 +472,7 @@ body {
   <div class="flex flex-col gap-6">
 
     <!-- CAT 1: AC & COOLING -->
-    <a href="ac.html" class="cat-card cat-dark" style="overflow:hidden; text-decoration:none; display:block;">
+    <div class="cat-card cat-dark" style="overflow:hidden; cursor:pointer;" onclick="window.location.href='ac.html'">
       <div class="flex flex-col-reverse md:flex-row md:items-stretch">
         <div style="flex:1; padding:32px 36px;" class="md:p-10">
           <div style="color:var(--ocean-l); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;">01 · Priority Service</div>
@@ -481,13 +481,10 @@ body {
             Your AC unit needs attention before summer hits. We service, repair, regas and install air conditioning across Vilamoura, Quarteira, Faro and the wider Algarve — keeping your home cool when it matters most.
           </p>
           <div class="flex flex-wrap mb-6">
-            <span class="pill pill-light">Servicing &amp; Cleaning</span>
-            <span class="pill pill-light">Regas &amp; Diagnostics</span>
-            <span class="pill pill-light">Repair</span>
-            <span class="pill pill-light">Supply &amp; Install</span>
-            <span class="pill pill-light">Terrace Shading</span>
-            <span class="pill pill-light">Window Tinting</span>
-            <span class="pill pill-light">Mosquito Screens</span>
+            <a href="ac.html#ac-servicing" class="pill pill-light" onclick="event.stopPropagation()">Servicing &amp; Cleaning</a>
+            <a href="ac.html#ac-servicing" class="pill pill-light" onclick="event.stopPropagation()">Regas &amp; Diagnostics</a>
+            <a href="ac.html#ac-servicing" class="pill pill-light" onclick="event.stopPropagation()">Repair</a>
+            <a href="ac.html#ac-supply" class="pill pill-light" onclick="event.stopPropagation()">Supply &amp; Install</a>
           </div>
           <div class="flex items-center gap-3">
             <span style="color:rgba(255,255,255,0.3); font-size:13px; white-space:nowrap;">View services</span>
@@ -499,53 +496,75 @@ body {
           <img loading="lazy" src="images/ac-install.jpg" alt="Daikin outdoor AC unit installed on modern villa exterior wall, Algarve" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;">
         </div>
       </div>
-    </a>
-    <!-- CAT 2 & 3 -->
-    <div class="grid md:grid-cols-2 gap-6">
+    </div>
+    <!-- CAT 2, 3 & 4 -->
+    <div class="grid md:grid-cols-3 gap-6">
 
-      <a href="repairs.html" class="cat-card glass-strong" style="overflow:hidden; padding:0; text-decoration:none; display:block;">
+      <div class="cat-card glass-strong" style="overflow:hidden; padding:0; cursor:pointer;" onclick="window.location.href='shade.html'">
+        <div style="width:100%; height:180px;">
+          <img loading="lazy" src="images/shade-pergola-main-new.jpg" alt="Pergola with woven fabric shade canopy in warm sunlight, Algarve terrace" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div style="padding:32px;">
+          <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;">02 · Shade &amp; Sun Control</div>
+          <h3 class="serif font-bold mb-3" style="font-size:clamp(22px,3vw,30px); color:var(--dark);">Shading &amp; Solar Control</h3>
+          <p style="color:var(--muted); line-height:1.78; font-size:14px; margin-bottom:18px;">
+            Pergolas, terrace shading and window tinting that turn a hot terrace into a cool retreat. Same-day mosquito screen fitting also available.
+          </p>
+          <div class="flex flex-wrap mb-6">
+            <a href="shade.html#terrace-shading" class="pill pill-dark" onclick="event.stopPropagation()">Terrace Shading</a>
+            <a href="shade.html#window-tinting" class="pill pill-dark" onclick="event.stopPropagation()">Window Tinting</a>
+            <a href="shade.html#mosquito-screens" class="pill pill-dark" onclick="event.stopPropagation()">Mosquito Screens</a>
+          </div>
+          <div class="flex justify-end">
+            <div class="btn flex items-center justify-center w-10 h-10 rounded-full"
+                 style="background:rgba(200,149,90,0.08); border:1px solid rgba(200,149,90,0.2); color:var(--ocean); font-size:18px;">→</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-card glass-strong" style="overflow:hidden; padding:0; cursor:pointer;" onclick="window.location.href='repairs.html'">
         <div style="width:100%; height:180px;">
           <img loading="lazy" src="images/furniture-assembly.jpg" alt="Furniture assembly in progress, modern Algarve apartment with olive tree view" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <div style="padding:32px;">
-          <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;">02 · Home &amp; Furniture</div>
+          <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;">03 · Home &amp; Furniture</div>
           <h3 class="serif font-bold mb-3" style="font-size:clamp(22px,3vw,30px); color:var(--dark);">Repairs &amp; Assembly</h3>
           <p style="color:var(--muted); line-height:1.78; font-size:14px; margin-bottom:18px;">
             Something's broken. A shelf needs putting up. The walls need a fresh coat. We handle the jobs that pile up — quickly, cleanly, without drama.
           </p>
           <div class="flex flex-wrap mb-6">
-            <span class="pill pill-dark">Small Repairs</span>
-            <span class="pill pill-dark">Furniture Assembly</span>
-            <span class="pill pill-dark">Painting</span>
+            <a href="repairs.html" class="pill pill-dark" onclick="event.stopPropagation()">Small Repairs</a>
+            <a href="repairs.html#furniture-assembly" class="pill pill-dark" onclick="event.stopPropagation()">Furniture Assembly</a>
+            <a href="repairs.html#painting" class="pill pill-dark" onclick="event.stopPropagation()">Painting</a>
           </div>
           <div class="flex justify-end">
             <div class="btn flex items-center justify-center w-10 h-10 rounded-full"
                  style="background:rgba(200,149,90,0.08); border:1px solid rgba(200,149,90,0.2); color:var(--ocean); font-size:18px;">→</div>
           </div>
         </div>
-      </a>
+      </div>
 
-      <a href="rental.html" class="cat-card glass-strong" style="overflow:hidden; padding:0; text-decoration:none; display:block;">
+      <div class="cat-card glass-strong" style="overflow:hidden; padding:0; cursor:pointer;" onclick="window.location.href='rental.html'">
         <div style="width:100%; height:180px; position:relative;">
           <img loading="lazy" src="images/rental-interior.jpg" alt="Bright modern living room interior with sea view terrace, rental property ready for guests in Algarve" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <div style="padding:32px;">
-          <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;">03 · Rental Ready</div>
+          <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;">04 · Rental Ready</div>
           <h3 class="serif font-bold mb-3" style="font-size:clamp(22px,3vw,30px); color:var(--dark);">Property Preparation</h3>
           <p style="color:var(--muted); line-height:1.78; font-size:14px; margin-bottom:18px;">
             Your guests arrive in 3 days. Is everything actually working? We inspect, fix and prepare rental properties for the season — so you get 5-star reviews, not complaints.
           </p>
           <div class="flex flex-wrap mb-6">
-            <span class="pill pill-dark">Pre-Checkin Inspection</span>
-            <span class="pill pill-dark">Fix Before Renting</span>
-            <span class="pill pill-dark">Season Prep</span>
+            <a href="rental.html#pre-checkin" class="pill pill-dark" onclick="event.stopPropagation()">Pre-Checkin Inspection</a>
+            <a href="rental.html#fix-before-renting" class="pill pill-dark" onclick="event.stopPropagation()">Fix Before Renting</a>
+            <a href="rental.html#season-prep" class="pill pill-dark" onclick="event.stopPropagation()">Season Prep</a>
           </div>
           <div class="flex justify-end">
             <div class="btn flex items-center justify-center w-10 h-10 rounded-full"
                  style="background:rgba(200,149,90,0.08); border:1px solid rgba(200,149,90,0.2); color:var(--ocean); font-size:18px;">→</div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -722,15 +741,15 @@ body {
         </div>
         <div class="price-row" style="border-color:rgba(255,255,255,0.07);">
           <span style="font-size:13px; color:rgba(255,255,255,0.72);">Install 9–12k BTU</span>
-          <span style="font-size:13px; color:var(--ocean-l); font-weight:600;">€180–250</span>
+          <span style="font-size:13px; color:var(--ocean-l); font-weight:600;">€220–300</span>
         </div>
         <div class="price-row" style="border-color:rgba(255,255,255,0.07);">
           <span style="font-size:13px; color:rgba(255,255,255,0.72);">Install 18k BTU</span>
-          <span style="font-size:13px; color:var(--ocean-l); font-weight:600;">€250–350</span>
+          <span style="font-size:13px; color:var(--ocean-l); font-weight:600;">€300–420</span>
         </div>
         <div class="price-row" style="border-color:rgba(255,255,255,0.07);">
           <span style="font-size:13px; color:rgba(255,255,255,0.72);">Multi-split 2–3 units</span>
-          <span style="font-size:13px; color:var(--ocean-l); font-weight:600;">€400–600</span>
+          <span style="font-size:13px; color:var(--ocean-l); font-weight:600;">€480–720</span>
         </div>
       </div>
     </div>
