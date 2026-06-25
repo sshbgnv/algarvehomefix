@@ -278,8 +278,6 @@ body {
   border-radius: 16px; overflow: hidden;
   background: var(--mist); position: relative; cursor: pointer;
 }
-.g-item:first-child { grid-column: span 2; }
-.g-item:nth-child(4) { grid-column: span 2; }
 .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
 .g-item:hover img { transform: scale(1.05); }
 .g-placeholder {
@@ -353,7 +351,6 @@ body {
 @media (max-width: 768px) {
   .hero-bg { min-height: auto !important; }
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-  .g-item:first-child, .g-item:nth-child(4) { grid-column: span 2; height: 200px; }
   .cta-strip { text-align: center; justify-content: center; padding: 32px 20px; }
   .hero-badge { font-size: 11px; padding: 6px 14px; }
   .wa-float { display: none; }
@@ -615,7 +612,7 @@ body {
 
   <div class="gallery-grid" id="gallery-grid">
     <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
-      <img loading="lazy" src="images/real-pergola-sky-view.jpg" alt="View looking up at woven fabric pergola shade canopy against blue sky, Algarve" style="width:100%;height:100%;object-fit:contain;">
+      <img loading="lazy" src="images/real-pergola-sky-view.jpg" alt="View looking up at woven fabric pergola shade canopy against blue sky, Algarve" style="width:100%;height:100%;object-fit:cover;">
       <div class="g-label">Pergola Shading · Algarve</div>
     </div>
     <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
@@ -651,7 +648,7 @@ body {
       <div class="g-label">Tinting Before/After · Algarve</div>
     </div>
     <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
-      <img loading="lazy" src="images/tint-corridor-columns.jpg" alt="Glass corridor with tinted windows and white columns, sunlit interior" style="width:100%;height:100%;object-fit:contain;">
+      <img loading="lazy" src="images/tint-corridor-columns.jpg" alt="Glass corridor with tinted windows and white columns, sunlit interior" style="width:100%;height:100%;object-fit:cover;">
       <div class="g-label">Tinted Corridor · Algarve</div>
     </div>
     <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
@@ -677,6 +674,54 @@ body {
     <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
       <img loading="lazy" src="images/gallery-bookshelf.jpg" alt="Three white Billy bookshelves assembled in corner configuration, Algarve apartment" style="width:100%;height:100%;object-fit:cover;">
       <div class="g-label">Shelving Assembly · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img loading="lazy" src="images/tinting-film-interior.jpg" alt="Interior view of home with solar control window film, tinted panels blocking glare, Algarve" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      <div class="g-label">Window Film · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="images/pergola-patio-dining.jpg" alt="Wooden pergola with cream fabric shade panels over outdoor dining set on stone patio, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Pergola Shading · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="images/pergola-garden-yellow.jpg" alt="Large pergola with yellow fabric shade canopy over garden patio, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Pergola Shade · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img loading="lazy" src="images/tinting-before-after-pool.jpg" alt="Before and after solar window tinting on floor-to-ceiling glass with pool view, Algarve villa" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Window Tinting · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="images/pergola-white-canopy.jpg" alt="View from below of white fabric shade canopy on wooden pergola, outdoor dining table, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Shade Canopy · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="images/pergola-terrace-house.jpg" alt="Yellow fabric pergola shade attached to house terrace with outdoor seating, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Terrace Pergola · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img loading="lazy" src="images/tinting-bay-window.jpg" alt="Solar control film being applied to large curved bay windows with garden view, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Window Tinting · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="images/pergola-dark-beams.jpg" alt="Dark wood pergola shade structure on two-storey building exterior, Algarve" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      <div class="g-label">Pergola Structure · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
+      <img loading="lazy" src="images/shelving-billy-corner.jpg" alt="Three white Billy bookshelves assembled in corner layout, Algarve apartment" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Shelving Assembly · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
+      <img loading="lazy" src="images/wardrobe-safe-interior.jpg" alt="Custom fitted wardrobe interior with shelves and built-in safe, Algarve home" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Wardrobe & Safe · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img loading="lazy" src="images/mosquito-screen-patio.jpg" alt="Mosquito screen on sliding patio door with garden view, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Mosquito Screen · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img loading="lazy" src="images/mosquito-screen-sliding.jpg" alt="Mosquito screen on large sliding glass door, garden courtyard view, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Mosquito Screen · Algarve</div>
     </div>
   </div>
 </section>
