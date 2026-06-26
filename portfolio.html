@@ -9,6 +9,9 @@
 <title>Our Work — Portfolio | Algarve Home Fix</title>
 <meta name="description" content="Real jobs by Algarve Home Fix — AC servicing, terrace shading, window tinting, furniture assembly and more across Vilamoura, Quarteira, Faro and Albufeira.">
 <link rel="canonical" href="https://www.algarvehomefix.com/portfolio.html">
+<link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/portfolio.html" />
+<link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/portfolio.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.algarvehomefix.com/portfolio.html" />
 <meta property="og:title" content="Our Work — Portfolio | Algarve Home Fix">
 <meta property="og:description" content="Browse real work by Algarve Home Fix — AC, shading, tinting, repairs and more across Algarve.">
 <meta property="og:type" content="website">
@@ -88,6 +91,11 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
   .wa-float { display: none; }
 }
+.lang-switch { display:flex; align-items:center; gap:4px; font-size:12px; font-weight:600; }
+.lang-switch a { color:var(--muted); text-decoration:none; }
+.lang-switch a:hover { color:var(--ocean-d); }
+.lang-switch .lang-active { color:var(--ocean-d); }
+.lang-switch .sep { color:var(--muted); opacity:0.4; }
 </style>
 </head>
 <body>
@@ -121,6 +129,11 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
         </div>
       </div>
       <a href="portfolio.html" style="font-size:13px; font-weight:600; color:var(--ocean); text-decoration:none;">Portfolio</a>
+      <div class="lang-switch">
+        <span class="lang-active">EN</span>
+        <span class="sep"> | </span>
+        <a href="pt/portfolio.html">PT</a>
+      </div>
     </div>
     <a href="https://wa.me/351913981175" target="_blank" class="btn glow-wa px-5 py-2.5 rounded-lg font-semibold text-sm text-white flex items-center gap-2" style="background:#25D366;">
       <i class="ti ti-brand-whatsapp"></i> WhatsApp

@@ -1,33 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- English pages -->
   <url>
     <loc>https://www.algarvehomefix.com</loc>
-    <lastmod>2026-06-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/"/>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.algarvehomefix.com/ac.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/ac.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/ac.html"/>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.algarvehomefix.com/shade.html</loc>
-    <lastmod>2026-06-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/shade.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/shade.html"/>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.algarvehomefix.com/repairs.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/repairs.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/repairs.html"/>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.algarvehomefix.com/rental.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/rental.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/rental.html"/>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/window-tinting.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/window-tinting.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/window-tinting.html"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/painting.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/painting.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/painting.html"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/portfolio.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/portfolio.html"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/privacy.html"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <!-- Portuguese pages -->
+  <url>
+    <loc>https://www.algarvehomefix.com/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/pt/ac.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/ac.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/ac.html"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/pt/shade.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/shade.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/shade.html"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/pt/repairs.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/repairs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/repairs.html"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/pt/rental.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/rental.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/rental.html"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/pt/window-tinting.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/window-tinting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/window-tinting.html"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/pt/painting.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/painting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/painting.html"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/pt/portfolio.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/portfolio.html"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/pt/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/privacy.html"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

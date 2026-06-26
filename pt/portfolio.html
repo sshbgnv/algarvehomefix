@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJNLW4Y9NS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RJNLW4Y9NS');</script>
+<title>Portfólio | Algarve Home Fix</title>
+<meta name="description" content="Portfólio de trabalhos da Algarve Home Fix — AC, sombreamento de terraço, película solar, montagem de mobiliário e mais, em todo o Algarve.">
+<link rel="canonical" href="https://www.algarvehomefix.com/pt/portfolio.html">
+<link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/portfolio.html" />
+<link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/portfolio.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.algarvehomefix.com/portfolio.html" />
+<meta property="og:title" content="Portfólio | Algarve Home Fix">
+<meta property="og:description" content="Trabalhos reais, resultados reais. AC, sombreamento, película solar, montagem de mobiliário em todo o Algarve.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.algarvehomefix.com/pt/portfolio.html">
+<meta property="og:image" content="https://www.algarvehomefix.com/images/hero-villa.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Moradia no Algarve com serviço da Algarve Home Fix">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ocean:   #C8955A;
+  --ocean-d: #8C7458;
+  --ocean-l: #E0AA78;
+  --sand:    #D4A574;
+  --sand-l:  #F0E6D6;
+  --light:   #FAFAF7;
+  --dark:    #3A2C1C;
+  --muted:   #8A7A6A;
+  --mist:    #F5EFE8;
+  --white:   #FFFFFF;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--dark); overflow-x: hidden; }
+.serif { font-family: 'Playfair Display', serif; }
+.detail-nav { background: rgba(255,255,255,0.88); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(200,149,90,0.14); }
+.detail-hero { background: linear-gradient(155deg, var(--ocean-d) 0%, #A08568 100%); }
+.btn { transition: all 0.28s cubic-bezier(0.34,1.56,0.64,1); }
+.btn:hover { transform: translateY(-3px); }
+.glow-wa { box-shadow: 0 6px 24px rgba(37,211,102,0.32); }
+.glow-wa:hover { box-shadow: 0 12px 40px rgba(37,211,102,0.45); }
+.wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 200; width: 60px; height: 60px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,0.45); transition: transform .25s, box-shadow .25s; text-decoration: none; }
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,0.55); }
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: white; border: 1px solid rgba(200,149,90,0.16); border-radius: 14px; padding: 8px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); z-index: 200; }
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+.nav-dropdown-item { display: block; padding: 9px 14px; color: var(--dark); text-decoration: none; font-size: 13px; font-weight: 500; border-radius: 8px; transition: background 0.15s; }
+.nav-dropdown-item:hover { background: rgba(200,149,90,0.08); color: var(--ocean-d); }
+.filter-btn { cursor: pointer; transition: all 0.2s; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 220px; gap: 12px; }
+.g-item { border-radius: 14px; overflow: hidden; position: relative; cursor: pointer; }
+.g-item img { transition: transform 0.4s ease; }
+.g-item:hover img { transform: scale(1.04); }
+.g-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(58,44,28,0.75), transparent); color: white; font-size: 12px; font-weight: 500; padding: 24px 14px 12px; }
+#lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 500; align-items: center; justify-content: center; }
+#lightbox.open { display: flex; }
+#lightbox img { max-width: 90vw; max-height: 88vh; border-radius: 12px; }
+#lightbox-close { position: absolute; top: 20px; right: 24px; color: white; font-size: 32px; cursor: pointer; line-height: 1; }
+.lang-switch { display:flex; align-items:center; gap:4px; font-size:12px; font-weight:600; }
+.lang-switch a { color:var(--muted); text-decoration:none; }
+.lang-switch a:hover { color:var(--ocean-d); }
+.lang-switch .lang-active { color:var(--ocean-d); }
+.lang-switch .sep { color:var(--muted); opacity:0.4; }
+@media (max-width: 768px) {
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
+  .wa-float { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div id="lightbox" onclick="closeLightbox()">
+  <span id="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<a href="https://wa.me/351913981175" target="_blank" class="wa-float" title="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.107 1.523 5.832L.057 23.57a.5.5 0 0 0 .612.612l5.735-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.73.954.97-3.635-.234-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
+</a>
+
+<nav class="detail-nav fixed top-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-2 font-semibold text-sm" style="color:var(--ocean); text-decoration:none;">
+      <i class="ti ti-arrow-left"></i> Algarve Home Fix
+    </a>
+    <div class="hidden md:flex items-center gap-6">
+      <div class="nav-dropdown">
+        <span style="font-size:13px; font-weight:600; color:var(--muted); display:flex; align-items:center; gap:3px; cursor:default; user-select:none;">
+          Serviços <i class="ti ti-chevron-down" style="font-size:10px;"></i>
+        </span>
+        <div class="nav-dropdown-menu">
+          <a href="ac.html" class="nav-dropdown-item">AC e Climatização</a>
+          <a href="shade.html" class="nav-dropdown-item">Sombreamento de Terraço</a>
+          <a href="window-tinting.html" class="nav-dropdown-item">Película Solar</a>
+          <a href="repairs.html" class="nav-dropdown-item">Reparações e Montagem</a>
+          <a href="painting.html" class="nav-dropdown-item">Pintura</a>
+          <a href="rental.html" class="nav-dropdown-item">Preparação para Arrendamento</a>
+        </div>
+      </div>
+      <a href="portfolio.html" style="font-size:13px; font-weight:600; color:var(--ocean); text-decoration:none;">Portfólio</a>
+      <div class="lang-switch">
+        <a href="../portfolio.html">EN</a>
+        <span class="sep"> | </span>
+        <span class="lang-active">PT</span>
+      </div>
+    </div>
+    <a href="https://wa.me/351913981175" target="_blank" class="btn glow-wa px-5 py-2.5 rounded-lg font-semibold text-sm text-white flex items-center gap-2" style="background:#25D366;">
+      <i class="ti ti-brand-whatsapp"></i> WhatsApp
+    </a>
+  </div>
+</nav>
+
+<section class="detail-hero flex items-end pt-32 pb-14 px-6" style="min-height:280px; position:relative; overflow:hidden;">
+  <div style="position:absolute;top:-100px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(200,149,90,0.2) 0%,transparent 60%);pointer-events:none;"></div>
+  <div class="max-w-7xl mx-auto w-full relative z-10">
+    <div style="color:var(--ocean-l); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">O Nosso Trabalho</div>
+    <h1 class="serif font-bold text-white mb-4" style="font-size:clamp(32px,5vw,52px);">Trabalhos reais.<br>Resultados reais.</h1>
+    <p style="color:rgba(255,255,255,0.62); font-size:16px; max-width:560px; line-height:1.75;">Cada fotografia é um trabalho real concluído no Algarve — AC, sombreamento de terraço, película solar, montagem de mobiliário e muito mais.</p>
+  </div>
+</section>
+
+<div class="max-w-7xl mx-auto px-6 py-16">
+
+  <div class="flex gap-2 flex-wrap mb-8" id="gallery-filters">
+    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium" data-filter="all"
+            style="background:var(--dark); color:white; border:1px solid var(--dark);">Todos</button>
+    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium" data-filter="ac"
+            style="background:transparent; color:var(--muted); border:1px solid rgba(200,149,90,0.2);">AC e Climatização</button>
+    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium" data-filter="shade"
+            style="background:transparent; color:var(--muted); border:1px solid rgba(200,149,90,0.2);">Sombreamento</button>
+    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium" data-filter="repair"
+            style="background:transparent; color:var(--muted); border:1px solid rgba(200,149,90,0.2);">Reparações</button>
+    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium" data-filter="rental"
+            style="background:transparent; color:var(--muted); border:1px solid rgba(200,149,90,0.2);">Preparação Arrendamento</button>
+  </div>
+
+  <div class="gallery-grid" id="gallery-grid">
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/real-pergola-sky-view.jpg" alt="Vista de baixo de toldo de tecido trançado de pérgola contra céu azul, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Sombreamento Pérgola · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/real-wardrobe-storage-1.jpg" alt="Roupeiro de armazenamento organizado com cofre e artigos domésticos, casa no Algarve" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      <div class="g-label">Organização de Armazenamento · Faro</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/real-mosquito-screen-closeup.jpg" alt="Pormenor do caixilho de mosquiteira instalada em janela de correr, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Mosquiteiras · Quarteira</div>
+    </div>
+    <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/pexels-drill-hinge-repair.jpg" alt="Pormenor de reparação de dobradiça com berbequim em mobiliário de madeira, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Reparação de Mobiliário · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/shading-pergola-detail.jpg" alt="Pormenor arquitetónico de pérgola em madeira com painéis de sombreamento trançados, luz do pôr do sol" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Pormenor de Pérgola · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/shading-install-process.jpg" alt="Toldo de tecido a ser instalado em estrutura de pérgola em madeira" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Instalação de Sombra · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/shade-lounge-mesh.jpg" alt="Área de lounge exterior sombreada por teto de malha trançada de pérgola, moradia no Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Lounge Sombreado · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/tinting-installed.jpg" alt="Janelas com película solar em casa no Algarve com vista para o mar, filme de controlo solar a reduzir o brilho" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Película Solar · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/tinting-before-after.jpg" alt="Comparação antes e depois de película solar em janela, vista para jardim com brilho reduzido" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Película Antes/Depois · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/tint-corridor-columns.jpg" alt="Corredor envidraçado com janelas com película e colunas brancas, interior iluminado" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Corredor com Película · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/gallery-pergola-awning.jpg" alt="Toldo bege estendido sobre estrutura de pérgola em madeira em varanda, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Toldo de Pérgola · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/gallery-pergola-villa.jpg" alt="Moradia de dois andares com pérgola em madeira escura a sombrear os terraços, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Pérgola Villa · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/gallery-mosquito-door-1.jpg" alt="Mosquiteira instalada em portas de correr de vidro grandes, vista interior, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Mosquiteira · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/gallery-mosquito-door-2.jpg" alt="Mosquiteira em porta de pátio de correr com vista para jardim, casa no Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Mosquiteira · Quarteira</div>
+    </div>
+    <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/gallery-wardrobe-safe.jpg" alt="Roupeiro embutido com prateleiras e cofre, casa no Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Roupeiro e Cofre · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/gallery-bookshelf.jpg" alt="Três estantes Billy brancas montadas em configuração de canto, apartamento no Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Montagem de Estantes · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/tinting-film-interior.jpg" alt="Vista interior de casa com película solar, painéis com película a bloquear o brilho, Algarve" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      <div class="g-label">Película Solar · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/pergola-patio-dining.jpg" alt="Pérgola em madeira com painéis de sombra em tecido creme sobre mesa de jantar exterior em pátio de pedra, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Sombreamento de Pérgola · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/pergola-garden-yellow.jpg" alt="Pérgola grande com toldo de tecido amarelo sobre pátio de jardim, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Sombra de Pérgola · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/tinting-before-after-pool.jpg" alt="Antes e depois de película solar em vidro do chão ao teto com vista para piscina, moradia no Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Película Solar · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/pergola-white-canopy.jpg" alt="Vista de baixo de toldo de tecido branco em pérgola de madeira, mesa de jantar exterior, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Toldo de Sombra · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/pergola-terrace-house.jpg" alt="Pérgola com tecido amarelo fixada ao terraço de moradia com mobiliário exterior, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Pérgola de Terraço · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/tinting-bay-window.jpg" alt="Película de controlo solar a ser aplicada em janelas curvas grandes com vista para jardim, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Película Solar · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="shade" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/pergola-dark-beams.jpg" alt="Estrutura de pérgola em madeira escura no exterior de edifício de dois andares, Algarve" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      <div class="g-label">Estrutura de Pérgola · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/shelving-billy-corner.jpg" alt="Três estantes Billy brancas montadas em layout de canto, apartamento no Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Montagem de Estantes · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/wardrobe-safe-interior.jpg" alt="Interior de roupeiro embutido com prateleiras e cofre, casa no Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Roupeiro e Cofre · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/mosquito-screen-patio.jpg" alt="Mosquiteira em porta de pátio de correr com vista para jardim, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Mosquiteira · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="ac" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/mosquito-screen-sliding.jpg" alt="Mosquiteira em porta de correr grande, vista para pátio com jardim, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Mosquiteira · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/wardrobe-assembly-shelves.jpg" alt="Roupeiro embutido grande em montagem, vários módulos de prateleiras brancas em progresso, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Montagem de Roupeiro · Algarve</div>
+    </div>
+    <div class="g-item" data-cat="repair" onclick="openLightbox(this)">
+      <img loading="lazy" src="../images/wardrobe-assembly-rails.jpg" alt="Roupeiro embutido com calhas de suspensão e prateleiras a ser instalado em quarto com paredes escuras, Algarve" style="width:100%;height:100%;object-fit:cover;">
+      <div class="g-label">Montagem de Roupeiro · Algarve</div>
+    </div>
+  </div>
+
+</div>
+
+<footer style="border-top:1px solid rgba(200,149,90,0.12); background:rgba(255,255,255,0.5); padding:32px 24px; margin-top:40px;">
+  <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
+    <div>
+      <a href="index.html" style="font-family:'Playfair Display',serif; font-weight:700; font-size:16px; color:var(--ocean-d); text-decoration:none;">AlgarveHomeFix</a>
+      <div style="font-size:12px; color:var(--muted); margin-top:4px;">De Sagres a Olhão · Conforto em casa desde 2023</div>
+    </div>
+    <p style="color:var(--muted); font-size:12px;">© 2026 Algarve Home Fix</p>
+    <div style="display:flex; gap:20px;">
+      <a href="https://wa.me/351913981175" target="_blank" style="color:var(--muted); font-size:13px; text-decoration:none;">WhatsApp</a>
+      <a href="https://www.facebook.com/algarvehomefix/" target="_blank" rel="noopener" style="color:var(--muted); font-size:13px; text-decoration:none;">Facebook</a>
+      <a href="https://www.instagram.com/algarvehomefix/" target="_blank" rel="noopener" style="color:var(--muted); font-size:13px; text-decoration:none;">Instagram</a>
+      <a href="mailto:Algarvehomefix@gmail.com" style="color:var(--muted); font-size:13px; text-decoration:none;">Email</a>
+      <a href="privacy.html" style="color:var(--muted); font-size:13px; text-decoration:none;">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>{
+      b.style.background='transparent'; b.style.color='var(--muted)'; b.style.borderColor='rgba(200,149,90,0.2)';
+    });
+    btn.style.background='var(--dark)'; btn.style.color='white'; btn.style.borderColor='var(--dark)';
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.g-item').forEach(item=>{
+      item.style.display=(f==='all'||item.dataset.cat===f)?'block':'none';
+    });
+  });
+});
+function openLightbox(el){
+  const img=el.querySelector('img');
+  if(img){document.getElementById('lightbox-img').src=img.src;document.getElementById('lightbox').classList.add('open');}
+}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+</script>
+</body>
+</html>
