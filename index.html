@@ -352,6 +352,13 @@ body {
   border: 1px solid rgba(200,149,90,0.12);
 }
 
+/* FAQ accordion */
+.faq-q { display:flex; justify-content:space-between; align-items:center; gap:16px; width:100%; background:none; border:none; padding:0; text-align:left; cursor:pointer; }
+.faq-icon { flex-shrink:0; color:var(--ocean); font-size:18px; transition:transform 0.3s ease; }
+.faq-item.is-open .faq-icon { transform:rotate(180deg); }
+.faq-a { overflow:hidden; max-height:0; transition:max-height 0.32s ease; }
+.faq-item.is-open .faq-a { max-height:320px; }
+
 @media (max-width: 768px) {
   .hero-bg { min-height: auto !important; }
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
@@ -880,44 +887,84 @@ body {
   </div>
   <div style="display:flex; flex-direction:column; gap:2px;">
 
-    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
-      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">How much does AC servicing cost in Algarve?</div>
-      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">Standard service costs €90–140 per unit and includes filter and coil cleaning, refrigerant check and a performance test. Regas starts from €120. We always give a free quote before any work begins.</p>
+    <div class="faq-item" style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <button class="faq-q" aria-expanded="false">
+        <span style="font-weight:600; font-size:15px; color:var(--dark);">How much does AC servicing cost in Algarve?</span>
+        <span class="faq-icon"><i class="ti ti-chevron-down"></i></span>
+      </button>
+      <div class="faq-a">
+        <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0; padding-top:10px;">Standard service costs €90–140 per unit and includes filter and coil cleaning, refrigerant check and a performance test. Regas starts from €120. We always give a free quote before any work begins.</p>
+      </div>
     </div>
 
-    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
-      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">Which areas of Algarve do you cover?</div>
-      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">The whole Algarve — from Sagres to Olhão. Including Vilamoura, Quarteira, Faro, Albufeira, Almancil, Loulé, Vale do Lobo, Quinta do Lago, Tavira, Lagos and Portimão.</p>
+    <div class="faq-item" style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <button class="faq-q" aria-expanded="false">
+        <span style="font-weight:600; font-size:15px; color:var(--dark);">Which areas of Algarve do you cover?</span>
+        <span class="faq-icon"><i class="ti ti-chevron-down"></i></span>
+      </button>
+      <div class="faq-a">
+        <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0; padding-top:10px;">The whole Algarve — from Sagres to Olhão. Including Vilamoura, Quarteira, Faro, Albufeira, Almancil, Loulé, Vale do Lobo, Quinta do Lago, Tavira, Lagos and Portimão.</p>
+      </div>
     </div>
 
-    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
-      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">How quickly can you respond?</div>
-      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">We aim to respond within 24 hours and often arrange a same-day or next-day visit. Fastest way: WhatsApp — send a photo of the problem and we'll reply straight away.</p>
+    <div class="faq-item" style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <button class="faq-q" aria-expanded="false">
+        <span style="font-weight:600; font-size:15px; color:var(--dark);">How quickly can you respond?</span>
+        <span class="faq-icon"><i class="ti ti-chevron-down"></i></span>
+      </button>
+      <div class="faq-a">
+        <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0; padding-top:10px;">We aim to respond within 24 hours and often arrange a same-day or next-day visit. Fastest way: WhatsApp — send a photo of the problem and we'll reply straight away.</p>
+      </div>
     </div>
 
-    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
-      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">Are you insured?</div>
-      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">Yes, fully insured for all work carried out at your property.</p>
+    <div class="faq-item" style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <button class="faq-q" aria-expanded="false">
+        <span style="font-weight:600; font-size:15px; color:var(--dark);">Are you insured?</span>
+        <span class="faq-icon"><i class="ti ti-chevron-down"></i></span>
+      </button>
+      <div class="faq-a">
+        <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0; padding-top:10px;">Yes, fully insured for all work carried out at your property.</p>
+      </div>
     </div>
 
-    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
-      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">Do you work in English?</div>
-      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">Yes. We work in English and Russian — which is why many expat homeowners and holiday rental managers across Algarve choose us.</p>
+    <div class="faq-item" style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <button class="faq-q" aria-expanded="false">
+        <span style="font-weight:600; font-size:15px; color:var(--dark);">Do you work in English?</span>
+        <span class="faq-icon"><i class="ti ti-chevron-down"></i></span>
+      </button>
+      <div class="faq-a">
+        <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0; padding-top:10px;">Yes. We work in English and Russian — which is why many expat homeowners and holiday rental managers across Algarve choose us.</p>
+      </div>
     </div>
 
-    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
-      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">Can you handle multiple jobs in one visit?</div>
-      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">Yes, and it's often the most efficient option. Many clients combine AC servicing with minor repairs, TV or curtain rail installation, or a pre-checkin inspection — all in one trip.</p>
+    <div class="faq-item" style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <button class="faq-q" aria-expanded="false">
+        <span style="font-weight:600; font-size:15px; color:var(--dark);">Can you handle multiple jobs in one visit?</span>
+        <span class="faq-icon"><i class="ti ti-chevron-down"></i></span>
+      </button>
+      <div class="faq-a">
+        <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0; padding-top:10px;">Yes, and it's often the most efficient option. Many clients combine AC servicing with minor repairs, TV or curtain rail installation, or a pre-checkin inspection — all in one trip.</p>
+      </div>
     </div>
 
-    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
-      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">Do you prepare Airbnb and holiday rental properties?</div>
-      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">Yes. We carry out pre-checkin inspections, urgent repairs between bookings, and full season preparation before the summer rental period. See our <a href="rental.html" style="color:var(--ocean); text-decoration:none; font-weight:500;">Rental Preparation page</a> for details.</p>
+    <div class="faq-item" style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <button class="faq-q" aria-expanded="false">
+        <span style="font-weight:600; font-size:15px; color:var(--dark);">Do you prepare Airbnb and holiday rental properties?</span>
+        <span class="faq-icon"><i class="ti ti-chevron-down"></i></span>
+      </button>
+      <div class="faq-a">
+        <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0; padding-top:10px;">Yes. We carry out pre-checkin inspections, urgent repairs between bookings, and full season preparation before the summer rental period. See our <a href="rental.html" style="color:var(--ocean); text-decoration:none; font-weight:500;">Rental Preparation page</a> for details.</p>
+      </div>
     </div>
 
-    <div style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
-      <div style="font-weight:600; font-size:15px; color:var(--dark); margin-bottom:8px;">Is the quote really free?</div>
-      <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0;">Yes — always. Send us a photo on WhatsApp, describe what you need, and we'll come back with a clear price. No commitment, no call-out fee.</p>
+    <div class="faq-item" style="border-radius:14px; border:1px solid rgba(200,149,90,0.14); background:white; padding:22px 28px;">
+      <button class="faq-q" aria-expanded="false">
+        <span style="font-weight:600; font-size:15px; color:var(--dark);">Is the quote really free?</span>
+        <span class="faq-icon"><i class="ti ti-chevron-down"></i></span>
+      </button>
+      <div class="faq-a">
+        <p style="font-size:14px; color:var(--muted); line-height:1.75; margin:0; padding-top:10px;">Yes — always. Send us a photo on WhatsApp, describe what you need, and we'll come back with a clear price. No commitment, no call-out fee.</p>
+      </div>
     </div>
 
   </div>
@@ -1074,6 +1121,21 @@ if(typeof gsap!=='undefined'){
   },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
   document.querySelectorAll('.glass-strong,.cat-card,.g-item,.cta-strip,.price-row').forEach(el=>obs.observe(el));
 }
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click',()=>{
+    const isOpen=item.classList.contains('is-open');
+    document.querySelectorAll('.faq-item').forEach(i=>{
+      i.classList.remove('is-open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if(!isOpen){
+      item.classList.add('is-open');
+      item.querySelector('.faq-q').setAttribute('aria-expanded','true');
+    }
+  });
+});
 </script>
 </body>
 </html>
