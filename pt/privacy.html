@@ -50,6 +50,13 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
 .prose ul { color: var(--muted); line-height: 1.85; margin-bottom: 14px; padding-left: 22px; list-style-type: disc; }
 .prose li { margin-bottom: 6px; }
 .prose a { color: var(--ocean); text-decoration: underline; }
+.lang-switch { display:flex; align-items:center; gap:4px; font-size:12px; font-weight:600; }
+.lang-switch a { color:var(--muted); text-decoration:none; }
+.lang-switch a:hover { color:var(--ocean-d); }
+.lang-switch .lang-active { color:var(--ocean-d); }
+.lang-switch .sep { color:var(--muted); opacity:0.4; }
+.glow-wa { box-shadow: 0 6px 24px rgba(37,211,102,0.32); }
+.glow-wa:hover { box-shadow: 0 12px 40px rgba(37,211,102,0.45); }
 </style>
 </head>
 <body>
@@ -63,6 +70,16 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
     <a href="index.html" class="flex items-center gap-2 font-semibold text-sm" style="color:var(--ocean); text-decoration:none;">
       <i class="ti ti-arrow-left"></i> Algarve Home Fix
     </a>
+    <div class="flex items-center gap-3">
+      <a href="https://wa.me/351913981175" target="_blank" class="btn glow-wa px-5 py-2.5 rounded-lg font-semibold text-sm text-white flex items-center gap-2" style="background:#25D366;">
+        <i class="ti ti-brand-whatsapp"></i> WhatsApp
+      </a>
+      <div class="lang-switch">
+        <a href="../privacy.html">EN</a>
+        <span class="sep"> | </span>
+        <span class="lang-active">PT</span>
+      </div>
+    </div>
   </div>
 </nav>
 

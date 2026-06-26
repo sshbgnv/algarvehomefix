@@ -55,6 +55,8 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
 .lang-switch a:hover { color:var(--ocean-d); }
 .lang-switch .lang-active { color:var(--ocean-d); }
 .lang-switch .sep { color:var(--muted); opacity:0.4; }
+.glow-wa { box-shadow: 0 6px 24px rgba(37,211,102,0.32); }
+.glow-wa:hover { box-shadow: 0 12px 40px rgba(37,211,102,0.45); }
 </style>
 </head>
 <body>
@@ -68,10 +70,15 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
     <a href="index.html" class="flex items-center gap-2 font-semibold text-sm" style="color:var(--ocean); text-decoration:none;">
       <i class="ti ti-arrow-left"></i> Algarve Home Fix
     </a>
-    <div class="lang-switch">
-      <span class="lang-active">EN</span>
-      <span class="sep"> | </span>
-      <a href="pt/privacy.html">PT</a>
+    <div class="flex items-center gap-3">
+      <a href="https://wa.me/351913981175" target="_blank" class="btn glow-wa px-5 py-2.5 rounded-lg font-semibold text-sm text-white flex items-center gap-2" style="background:#25D366;">
+        <i class="ti ti-brand-whatsapp"></i> WhatsApp
+      </a>
+      <div class="lang-switch">
+        <span class="lang-active">EN</span>
+        <span class="sep"> | </span>
+        <a href="pt/privacy.html">PT</a>
+      </div>
     </div>
   </div>
 </nav>
