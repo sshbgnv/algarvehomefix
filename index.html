@@ -243,6 +243,11 @@ body {
 }
 .cat-card:hover { transform: translateY(-5px); box-shadow: 0 0 0 4px rgba(212,165,116,0.18), 0 18px 48px rgba(58,44,28,0.12); }
 
+.price-card {
+  border: 2px solid var(--sand);
+  box-shadow: 0 0 0 4px rgba(212,165,116,0.12), 0 8px 20px rgba(212,165,116,0.15);
+}
+
 .cat-dark {
   background: linear-gradient(145deg, var(--ocean-d) 0%, #A08568 100%);
   border: 1px solid rgba(200,149,90,0.2);
@@ -709,7 +714,7 @@ body {
   <div class="grid md:grid-cols-3 gap-6">
 
     <!-- General rate -->
-    <div class="glass-strong rounded-2xl p-8">
+    <div class="price-card glass-strong rounded-2xl p-8">
       <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:20px;">General Rate</div>
       <div class="flex items-baseline gap-2 mb-2">
         <span class="serif font-bold gradient-text" style="font-size:62px; line-height:1;">€60</span>
@@ -725,7 +730,7 @@ body {
     </div>
 
     <!-- AC pricing -->
-    <div class="rounded-2xl p-8" style="background:linear-gradient(145deg,var(--ocean-d),#A08568); border:1px solid rgba(200,149,90,0.25);">
+    <div class="price-card rounded-2xl p-8" style="background:linear-gradient(145deg,var(--ocean-d),#A08568);">
       <div style="color:var(--ocean-l); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:20px;">AC Services</div>
       <div class="flex items-baseline gap-2 mb-2">
         <span class="serif font-bold text-white" style="font-size:38px; line-height:1;">from €90</span>
@@ -756,7 +761,7 @@ body {
     </div>
 
     <!-- Free quote card -->
-    <div class="glass-strong rounded-2xl p-8 flex flex-col justify-between" style="border:1.5px solid rgba(37,211,102,0.22);">
+    <div class="price-card glass-strong rounded-2xl p-8 flex flex-col justify-between">
       <div>
         <div style="color:var(--ocean); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:20px;">Free Quote</div>
         <h4 class="serif font-bold mb-4" style="font-size:22px; color:var(--dark);">Not sure of the cost?</h4>
