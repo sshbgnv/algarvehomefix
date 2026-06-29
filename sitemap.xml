@@ -74,6 +74,22 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/blog.html"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/blog-ac-health.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/blog-ac-health.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/blog-ac-health.html"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Portuguese pages -->
   <url>
     <loc>https://www.algarvehomefix.com/pt/</loc>
@@ -146,5 +162,21 @@
     <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/pt/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/blog.html"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/pt/blog-ac-health.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/blog-ac-health.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/blog-ac-health.html"/>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
