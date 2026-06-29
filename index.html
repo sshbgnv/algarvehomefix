@@ -216,6 +216,9 @@ body {
 .nav-dropdown:hover .nav-dropdown-menu { display: block; }
 .nav-dropdown-item { display: block; padding: 9px 14px; color: var(--dark); text-decoration: none; font-size: 13px; font-weight: 500; border-radius: 8px; transition: background 0.15s; }
 .nav-dropdown-item:hover { background: rgba(200,149,90,0.08); color: var(--ocean-d); }
+.nav-dropdown::after { content:''; position:absolute; left:50%; transform:translateX(-50%); width:250px; top:100%; height:14px; z-index:199; }
+.explore-tile { display:flex; flex-direction:column; align-items:center; gap:10px; padding:18px 10px; border-radius:16px; border:1px solid rgba(200,149,90,0.16); background:rgba(200,149,90,0.03); text-decoration:none; transition:border-color 0.2s, background 0.2s; }
+.explore-tile:hover { border-color:rgba(212,165,116,0.5); background:rgba(200,149,90,0.08); }
 
 /* HERO */
 .hero-bg {
@@ -564,7 +567,7 @@ body {
     <!-- 3: Window Tinting -->
     <div class="cat-card glass-strong" style="overflow:hidden; padding:0; cursor:pointer;" onclick="window.location.href='window-tinting.html'">
       <div style="width:100%; height:160px;">
-        <img loading="lazy" src="images/tint-curved-bay-real.png" alt="Bay windows with different tinting levels showing solar control film effect, Algarve" style="width:100%; height:100%; object-fit:cover; object-position:center;">
+        <img loading="lazy" src="images/tint-curved-bay-real.png" alt="Bay windows with different tinting levels showing solar control film effect, Algarve" style="width:100%; height:100%; object-fit:cover; object-position:47% center;">
       </div>
       <div style="padding:24px;">
         <div style="color:var(--ocean); font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px;">03 · Window Tinting</div>
