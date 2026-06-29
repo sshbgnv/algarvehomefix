@@ -73,6 +73,11 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
   .wa-float { display: none; }
 }
+@media (max-width: 767px) {
+  .nav-inner { padding-left: 12px !important; padding-right: 12px !important; }
+  .nav-right { gap: 8px !important; }
+  .nav-wa-text { display: none; }
+}
 </style>
 </head>
 <body>
@@ -87,7 +92,7 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
 </a>
 
 <nav class="detail-nav fixed top-0 w-full z-50">
-  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+  <div class="max-w-7xl mx-auto nav-inner px-6 py-3 flex justify-between items-center">
     <a href="index.html" class="flex items-center gap-2 font-semibold text-sm" style="color:var(--ocean); text-decoration:none;">
       <i class="ti ti-arrow-left"></i> Algarve Home Fix
     </a>
@@ -108,9 +113,9 @@ body { background: var(--light); font-family: 'Inter', sans-serif; color: var(--
       <a href="portfolio.html" style="font-size:13px; font-weight:600; color:var(--ocean); text-decoration:none;">Portfólio</a>
       <a href="blog.html" style="font-size:13px; font-weight:600; color:var(--muted); text-decoration:none;">Blog</a>
     </div>
-    <div class="flex items-center gap-6">
+    <div class="flex items-center gap-6 nav-right">
       <a href="https://wa.me/351913981175" target="_blank" class="btn glow-wa px-5 py-2.5 rounded-lg font-semibold text-sm text-white flex items-center gap-2" style="background:#25D366;">
-        <i class="ti ti-brand-whatsapp"></i> WhatsApp
+        <i class="ti ti-brand-whatsapp"></i><span class="nav-wa-text"> WhatsApp</span>
       </a>
       <div class="lang-switch">
         <a href="../portfolio.html">EN</a>

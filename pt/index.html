@@ -390,6 +390,11 @@ body {
   .cta-btns > * { padding-left: 14px !important; padding-right: 14px !important; font-size: 13px !important; }
   .contact-map-wrap { flex: none !important; height: 300px; min-height: 300px; }
 }
+@media (max-width: 767px) {
+  .nav-inner { padding-left: 12px !important; padding-right: 12px !important; }
+  .nav-right { gap: 8px !important; }
+  .nav-wa-text { display: none; }
+}
 </style>
 </head>
 <body>
@@ -411,7 +416,7 @@ body {
 
 <!-- NAV -->
 <nav class="glass-strong fixed top-0 w-full z-50">
-  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+  <div class="max-w-7xl mx-auto nav-inner px-6 py-3 flex justify-between items-center">
     <div onclick="showPage('home')" style="cursor:pointer; display:flex; align-items:center; gap:10px;">
       <div style="width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg,var(--ocean),var(--sand)); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
@@ -441,11 +446,11 @@ body {
       <a onclick="scrollToSection('pricing')" class="nav-link">Preços</a>
       <a onclick="scrollToSection('contact')" class="nav-link">Contacto</a>
     </div>
-    <div class="flex items-center gap-6">
+    <div class="flex items-center gap-6 nav-right">
       <a href="https://wa.me/351913981175" target="_blank"
          class="btn glow-wa px-5 py-2.5 rounded-lg font-semibold text-sm text-white flex items-center gap-2"
          style="background:#25D366;">
-        <i class="ti ti-brand-whatsapp"></i> WhatsApp
+        <i class="ti ti-brand-whatsapp"></i><span class="nav-wa-text"> WhatsApp</span>
       </a>
       <div class="lang-switch">
         <a href="../index.html">EN</a>
