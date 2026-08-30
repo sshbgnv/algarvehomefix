@@ -90,6 +90,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/blog-pergola.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/blog-pergola.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/blog-pergola.html"/>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Portuguese pages -->
   <url>
     <loc>https://www.algarvehomefix.com/pt/</loc>
@@ -176,6 +184,14 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/blog-ac-health.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/blog-ac-health.html"/>
     <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.algarvehomefix.com/pt/blog-pergola.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.algarvehomefix.com/pt/blog-pergola.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.algarvehomefix.com/blog-pergola.html"/>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
